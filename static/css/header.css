@@ -1,0 +1,13 @@
+.site-title a {
+    text-decoration: none;
+}
+.site-description {
+    margin-bottom: 0;
+    padding-bottom: 2em;
+}
+.site-branding{
+    text-align: center;
+}
+.custom-logo {
+    padding-top: 2em;
+}

@@ -1,0 +1,27 @@
+.wrapper { 
+    width:100%; 
+    max-width:1180px; 
+    padding:1em 15px 0;
+}
+
+@media (min-width:40em) { 
+    .wrapper { 
+        display:flex; 
+        justify-content:space-between; 
+        margin:auto; 
+    }
+
+}
+
+.site-main {
+  width: 100%;
+
+}
+
+@media (min-width: 40em) {
+    .site-main {
+      max-width: 70%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+}

@@ -1,0 +1,14 @@
+.site-footer {
+    width: 100%;
+}
+
+.site-footer {
+    background: #262626;
+    color: #888;
+}
+
+.site-footer .site-info {
+    padding: 2em 15px;
+    margin: 0 auto;
+    display: table;
+}
