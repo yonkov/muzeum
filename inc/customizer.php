@@ -10,92 +10,24 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function muzeum_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-	if ( isset( $wp_customize->selective_refresh ) ) {
-		$wp_customize->selective_refresh->add_partial(
-			'blogname',
-			array(
-				'selector'        => '.site-title a',
-				'render_callback' => 'muzeum_customize_partial_blogname',
-			)
-		);
-		$wp_customize->selective_refresh->add_partial(
-			'blogdescription',
-			array(
-				'selector'        => '.site-description',
-				'render_callback' => 'muzeum_customize_partial_blogdescription',
-			)
-		);
-	}
-}
-add_action( 'customize_register', 'muzeum_customize_register' );
+ /* Call Custom Sanitization Functions */
+require get_template_directory() . '/inc/sanitization-functions.php';
+
 
 /**
- * Render the site title for the selective refresh partial.
+ * Customizer Helper Functions.
  *
- * @return void
  */
-function muzeum_customize_partial_blogname() {
-	bloginfo( 'name' );
-}
+
+require get_template_directory() . '/inc/customizer-helper.php';
 
 /**
- * Render the site tagline for the selective refresh partial.
+ * Customize Colors Section in the theme customizer.
  *
- * @return void
- */
-function muzeum_customize_partial_blogdescription() {
-	bloginfo( 'description' );
-}
-
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
-function muzeum_customize_preview_js() {
-	wp_enqueue_script( 'muzeum-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), MUZEUM_VERSION, true );
-}
-add_action( 'customize_preview_init', 'muzeum_customize_preview_js' );
-
-
-/**
- * Get lighter/darker color when given a hex value.
- *
- * @param string $hex Get the hex value from the customizer api.
- * @param int $steps Steps should be between -255 and 255. Negative = darker, positive = lighter.
- * @link https://wordpress.org/themes/scaffold
- * @license GPL-2.0-or-later
+ * @package muzeum
  * @since 1.0.0
- * 
  */
-
-function muzeum_brightness( $hex, $steps ) {
-
-	$steps = max( -255, min( 255, $steps ) );
-
-	// Normalize into a six character long hex string.
-	$hex = str_replace( '#', '', $hex );
-	if ( strlen( $hex ) === 3 ) {
-		$hex = str_repeat( substr( $hex, 0, 1 ), 2 ) . str_repeat( substr( $hex, 1, 1 ), 2 ) . str_repeat( substr( $hex, 2, 1 ), 2 );
-	}
-
-	// Split into three parts: R, G and B.
-	$color_parts = str_split( $hex, 2 );
-	$return      = '#';
-
-	foreach ( $color_parts as $color ) {
-		$color   = hexdec( $color ); // Convert to decimal.
-		$color   = max( 0, min( 255, $color + $steps ) ); // Adjust color.
-		$return .= str_pad( dechex( $color ), 2, '0', STR_PAD_LEFT ); // Make two char hex code.
-	}
-
-	return sanitize_hex_color( $return );
-}
-
-/* Customize Color Sections */
 
 function muzeum_colors_section_customize ($wp_customize) {
 
@@ -253,3 +185,75 @@ function muzeum_customizer_css() {
 	<?php
 }
 add_action( 'wp_head', 'muzeum_customizer_css' );
+
+
+/**
+ * Register Blog Settings Section in the theme customizer.
+ *
+ * @package muzeum
+ * @since 1.0.0
+ */
+function muzeum_register_blog_theme_customizer( $wp_customize ) {
+    $wp_customize->add_section( 'blog_options', array(
+        'title'       => esc_html__( 'Post Settings', 'muzeum' ),
+        'description' => esc_html__( 'Choose what post meta information to show in the post archives or individual blog posts. The post meta information includes published date, author, category tags or comments. You can display or remove this information if you want.', 'muzeum' ),
+	) );
+	/* Show categories entry meta */
+    $wp_customize->add_setting( 'show_post_categories', array(
+        'default'           => 1,
+        'sanitize_callback' => 'muzeum_sanitize_checkbox',
+    ) );
+    $wp_customize->add_control( 'show_post_categories', array(
+        'label'       => esc_html__( 'Show post categories', 'muzeum' ),
+        'description' => esc_html__( 'Show the categories, associated to the post.', 'muzeum' ),
+        'section'     => 'blog_options',
+        'type'        => 'checkbox',
+    ) );
+    /* Show tags entry meta */
+    $wp_customize->add_setting( 'show_post_tags', array(
+        'default'           => 1,
+        'sanitize_callback' => 'muzeum_sanitize_checkbox',
+    ) );
+    $wp_customize->add_control( 'show_post_tags', array(
+        'label'       => esc_html__( 'Show post tags', 'muzeum' ),
+        'description' => esc_html__( 'Show the tags, associated to the post.', 'muzeum' ),
+        'section'     => 'blog_options',
+        'type'        => 'checkbox',
+    ) );
+    /* Show Published date entry meta */
+    $wp_customize->add_setting( 'show_post_date', array(
+        'default'           => 1,
+        'sanitize_callback' => 'muzeum_sanitize_checkbox',
+    ) );
+    $wp_customize->add_control( 'show_post_date', array(
+        'label'       => esc_html__( 'Show post date', 'muzeum' ),
+        'description' => esc_html__( 'Show the published date of the post.', 'muzeum' ),
+        'section'     => 'blog_options',
+        'type'        => 'checkbox',
+    ) );
+    /* Show Published author entry meta */
+    $wp_customize->add_setting( 'show_post_author', array(
+        'default'           => 1,
+        'sanitize_callback' => 'muzeum_sanitize_checkbox',
+    ) );
+    $wp_customize->add_control( 'show_post_author', array(
+        'label'       => esc_html__( 'Show post author', 'muzeum' ),
+        'description' => esc_html__( 'Show the published date of the post.', 'muzeum' ),
+        'section'     => 'blog_options',
+        'type'        => 'checkbox',
+	) );
+	/* Show Post Comments */
+    $wp_customize->add_setting( 'show_post_comments', array(
+        'default'           => 1,
+        'sanitize_callback' => 'muzeum_sanitize_checkbox',
+    ) );
+    $wp_customize->add_control( 'show_post_comments', array(
+        'label'       => esc_html__( 'Show Comments', 'muzeum' ),
+        'description' => esc_html__( 'Display the number of comments.', 'muzeum' ),
+        'section'     => 'blog_options',
+        'type'        => 'checkbox',
+    ) );
+
+}
+
+add_action( 'customize_register', 'muzeum_register_blog_theme_customizer' );

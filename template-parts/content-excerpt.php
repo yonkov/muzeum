@@ -10,6 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php muzeum_post_thumbnail(); ?>
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -22,14 +23,11 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				muzeum_posted_on();
-				muzeum_posted_by();
+				muzeum_entry_header();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
-	<?php muzeum_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php

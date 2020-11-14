@@ -78,8 +78,8 @@ if ( ! function_exists( 'muzeum_setup' ) ) :
 			apply_filters(
 				'muzeum_custom_background_args',
 				array(
-					'default-color' => '#F1DDBA',
-					'default-image' => '',
+					'default-color' => '#ffffff',
+					'default-image' => get_template_directory_uri() . '/static/img/whitenoise-360x370.png',
 				)
 			)
 		);
@@ -166,14 +166,24 @@ add_action( 'widgets_init', 'muzeum_widgets_init' );
 function muzeum_scripts() {
 	wp_enqueue_style( 'muzeum-style', get_stylesheet_uri(), array(), MUZEUM_VERSION );
 	wp_style_add_data( 'muzeum-style', 'rtl', 'replace' );
+	// Load Ionicons font
+	//wp_enqueue_script( 'muzeum-ionicons-esm', get_template_directory_uri() . '/static/js/ionicons/ionicons.esm.js', array(), '5.2.3', true );
+	wp_enqueue_script( 'muzeum-ionicons', get_template_directory_uri() . '/static/js/ionicons/ionicons.js', array(), '5.2.3', true );
 
-	wp_enqueue_script( 'muzeum-navigation', get_template_directory_uri() . '/js/navigation.js', array(), MUZEUM_VERSION, true );
+	wp_enqueue_script( 'muzeum-navigation', get_template_directory_uri() . '/static/js/navigation.js', array(), MUZEUM_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'muzeum_scripts' );
+
+
+// Use Ionicons in WordPress
+add_action( 'wp_enqueue_scripts', 'muzeum_enqueue_ionicons' );
+function muzeum_enqueue_ionicons() {
+
+}
 
 /**
  * Implement the Custom Header feature.
@@ -184,11 +194,6 @@ require get_template_directory() . '/inc/custom-header.php';
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
 
 /**
  * Customizer additions.
@@ -230,4 +235,39 @@ function muzeum_the_logo(){
 		the_custom_logo();
 
 	endif;
+}
+
+/* Post Pagination on Archives */
+function muzeum_the_posts_navigation() {
+    $muzeum_prev_arrow = ( is_rtl() ? '&rarr;' : '&larr;' );
+    $muzeum_next_arrow = ( is_rtl() ? '&larr;' : '&rarr;' );
+    				the_posts_navigation( array(
+        'prev_text'          => $muzeum_prev_arrow . __( ' Older posts', 'muzeum' ),
+        'next_text'          => __( 'Newer posts', 'muzeum' ) . $muzeum_next_arrow,
+        'screen_reader_text' => __( 'Posts navigation', 'muzeum' )
+    ) );
+}
+
+/* Post navigation in single.php */
+function muzeum_the_post_navigation() {
+    $muzeum_prev_arrow = ( is_rtl() ? '&rarr;' : '&larr;' );
+    $muzeum_next_arrow = ( is_rtl() ? '&larr;' : '&rarr;' );
+    the_post_navigation( array(
+        'prev_text' => '<span class="nav-subtitle">' . $muzeum_prev_arrow . '</span> <span class="nav-title">%title</span>',
+        'next_text' => '<span class="nav-title">%title </span>' . '<span class="nav-subtitle">' . $muzeum_next_arrow . '</span>',
+        'screen_reader_text' => __( 'Posts navigation', 'muzeum' )
+        ) );
+}
+
+/* Show the correct icon on post archives */
+function muzeum_archive_page_icon(){
+	if(is_category()){
+		return '<ion-icon name="folder-outline"></ion-icon>' ;
+	}
+	else if(is_tag()){
+		return '<ion-icon name="pricetags-outline"></ion-icon>';
+	}
+	else if (is_author()){
+		return '<ion-icon name="person-outline"></ion-icon>';
+	}
 }
