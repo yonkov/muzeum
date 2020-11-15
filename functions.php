@@ -294,3 +294,49 @@ function muzeum_excerpt_more( $link ) {
 }
 
 add_filter( 'excerpt_more', 'muzeum_excerpt_more' );
+
+/* Add search to top menu bar */
+
+function muzeum_add_search_box( $items) {
+	ob_start(); ?>
+	
+	<li class="top-search">
+		<a href="#" class="search-icon">
+			<ion-icon name="search-outline"></ion-icon>
+		</a>
+		<div class="top-search-form"><?php get_search_form(); ?></div>
+	</li> <?php
+
+    $items .= ob_get_clean();
+
+    return $items;
+	
+}
+
+add_filter( 'wp_nav_menu_items','muzeum_add_search_box', 10, 2 );
+
+/* */
+
+function muzeum_show_search_form_menu_click(){
+
+	$muzeum_top_search_form = str_replace(array("\n","\r","\r\n"),'', get_search_form( false ));
+?>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+
+			setTimeout(function(){
+				document.getElementsByClassName('top-search')[0].addEventListener('click', function(){
+					
+					$html = '<li><?php echo $muzeum_top_search_form ?></li>';
+					document.getElementById('top-menu').innerHTML += $html;
+			
+				}, 100);
+			
+			})
+		})
+		
+	</script>
+<?php
+}
+
+//add_action('wp_footer', 'muzeum_show_search_form_menu_click');

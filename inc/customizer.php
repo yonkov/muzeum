@@ -157,12 +157,10 @@ function muzeum_customizer_css() {
 			transition: .3s;
 		}
 
-		.main-nav .menu-toggle {
-			background-color: <?php echo esc_attr( $primary_menu_color ); // WPCS: XSS ok. ?>;
-		}
-
-		.main-nav.toggled .menu-toggle {
-			background-color: <?php echo esc_attr(muzeum_brightness( $primary_menu_color, -50 )); // WPCS: XSS ok. ?>;
+		.main-nav .burger,
+		.main-nav .burger::before,
+		.main-nav .burger::after {
+			border-bottom: 2px solid <?php echo esc_attr($primary_menu_text_color); ?>;
 		}
 
 		.main-nav a {
@@ -182,7 +180,8 @@ function muzeum_customizer_css() {
 
 	<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 
-		.top-nav {
+		.top-nav,
+		.top-nav .search-form .form-group input {
 			background-color: <?php echo esc_attr( $top_menu_color ); // WPCS: XSS ok. ?>;
 		}
 
@@ -191,15 +190,14 @@ function muzeum_customizer_css() {
 			transition: .3s;
 		}
 
-		.top-nav .menu-toggle {
-			background-color: <?php echo esc_attr( $top_menu_color ); // WPCS: XSS ok. ?>;
+		.top-nav .burger,
+		.top-nav .burger::before,
+		.top-nav .burger::after {
+			border-bottom: 2px solid <?php echo esc_attr($top_menu_text_color); ?>;
 		}
 
-		.top-nav.toggled .menu-toggle {
-			background-color: <?php echo muzeum_brightness( $top_menu_color, -50 ); // WPCS: XSS ok. ?>;
-		}
-
-		.top-nav a {
+		.top-nav a,
+		.top-search-form input::placeholder{
 			color: <?php echo esc_attr($top_menu_text_color); ?>;
 		}
 

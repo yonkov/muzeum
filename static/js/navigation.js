@@ -8,7 +8,7 @@
 	var topNavigation = document.getElementById( 'top-navigation' );
 	var siteNavigation = document.getElementById( 'site-navigation' );
 
-	var buttons = document.querySelectorAll('.site-menu button');
+	var menuButtons = document.querySelectorAll('.site-menu .menu-toggle');
 
 	var topMenu = topNavigation.getElementsByTagName( 'ul' )[ 0 ];
 	var siteMenu = siteNavigation.getElementsByTagName( 'ul' )[ 0 ];
@@ -22,8 +22,8 @@
 	}
 
 	// Toggle the .toggled class and the aria-expanded value each time a menu button is clicked.
-	for (i = 0; i < buttons.length; ++i) {
-		buttons[i].addEventListener( 'click', function(e) {
+	for (i = 0; i < menuButtons.length; ++i) {
+		menuButtons[i].addEventListener( 'click', function(e) {
 			e.preventDefault();
 			var $self =this;
 			var toggledIcon = this.childNodes[1].childNodes[1];
@@ -98,5 +98,19 @@
 			menuItem.classList.toggle( 'focus' );
 		}
 	}
+
+	/* Top Menu Search form */
+
+	document.getElementsByClassName('search-icon')[0].addEventListener('click', function(e){
+		e.preventDefault();
+		var searchForm = this.parentNode;
+		this.parentNode.classList.toggle('open');
+
+		document.getElementsByClassName('close')[0].addEventListener('click', function(e){
+			e.preventDefault();
+			searchForm.classList.remove('open');
+		})
+
+	})
 
 }() );

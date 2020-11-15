@@ -41,8 +41,7 @@
 					'theme_location' => 'menu-1',
 					'menu_id'        => 'top-menu',
 				)
-			);
-			?>
+			); ?>
 		</nav><!-- #site-navigation -->
 		
 		<?php endif; ?>
