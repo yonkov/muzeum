@@ -1,5 +1,24 @@
 @media (min-width: 60em){
-    .edit-link {
+    .entry-meta .edit-link {
         float: right;
     }
+}
+
+ion-icon {
+    padding-right: 2px;
+    position: relative;
+    top: 2px;
+}
+
+.entry-meta span {
+    display: inline-block;
+    padding-right: 4px;
+}
+
+.entry-meta time {
+    padding-left: 2px;
+}
+
+.entry-footer .tags-links {
+    padding-right: 8px;
 }

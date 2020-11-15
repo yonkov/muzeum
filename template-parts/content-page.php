@@ -13,9 +13,12 @@
 <?php muzeum_post_thumbnail(); ?>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php if ( get_edit_post_link() ) :
+			muzeum_entry_header();
+		endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
+	<div class="entry-content clearfix">
 		<?php
 		the_content();
 
@@ -28,26 +31,8 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'muzeum' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					wp_kses_post( get_the_title() )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
+	<footer class="entry-footer">
+		<?php muzeum_entry_footer(); ?>
+	</footer><!-- .entry-footer -->
+
 </article><!-- #post-<?php the_ID(); ?> -->

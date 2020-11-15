@@ -270,3 +270,27 @@ function muzeum_archive_page_icon(){
 		return '<ion-icon name="person-outline"></ion-icon>';
 	}
 }
+
+/**
+ * Replaces "[...]" (appended to automatically generated excerpts) with ... and
+ * a 'Continue reading' link.
+ *
+ * @since muzeum 1.0.0
+ *
+ * @param string $link Link to single post/page.
+ * @return string 'Continue reading' link prepended with an ellipsis.
+ */
+function muzeum_excerpt_more( $link ) {
+    if ( is_admin() ) {
+        return $link;
+    }
+    $link = sprintf(
+        '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
+        esc_url( get_permalink( get_the_ID() ) ),
+        /* translators: %s: Name of current post */
+        sprintf( __( 'Read the full post %1$s<span class="screen-reader-text">"%2$s"</span>', 'muzeum' ), ( is_rtl() ? '&larr;' : '&rarr;' ), esc_html( get_the_title( get_the_ID() ) ) )
+    );
+    return ' &hellip; ' . $link;
+}
+
+add_filter( 'excerpt_more', 'muzeum_excerpt_more' );

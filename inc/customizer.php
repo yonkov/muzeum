@@ -154,6 +154,7 @@ function muzeum_customizer_css() {
 
 		.main-nav li:hover, .main-nav li.focus {
 			background-color: <?php echo esc_attr(muzeum_brightness( $primary_menu_color, -20 )); // WPCS: XSS ok. ?>;
+			transition: .3s;
 		}
 
 		.main-nav .menu-toggle {
@@ -187,6 +188,7 @@ function muzeum_customizer_css() {
 
 		.top-nav li:hover, .top-nav li.focus {
 			background-color: <?php echo muzeum_brightness( $top_menu_color, -20 ); // WPCS: XSS ok. ?>;
+			transition: .3s;
 		}
 
 		.top-nav .menu-toggle {
