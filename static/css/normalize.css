@@ -331,8 +331,9 @@ table {
 }
 
 /* Links */
-a {
-	color: #4169e1;
+
+.entry-title a {
+	text-decoration: none;
 }
 
 a:hover,

@@ -338,8 +338,8 @@ table {
 }
 
 /* Links */
-a {
-	color: #4169e1;
+.entry-title a {
+	text-decoration: none;
 }
 
 a:hover,
@@ -999,7 +999,6 @@ textarea {
     line-height: 30px;
     font-weight: 500;
     text-transform: uppercase;
-    color: #888;
 }
 
 .widget>ul {
