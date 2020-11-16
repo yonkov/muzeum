@@ -136,6 +136,7 @@ add_action('customize_register', 'muzeum_colors_section_customize');
 function muzeum_customizer_css() {
 
 	$primary_menu_color = get_theme_mod( 'main_nav_color', '#f1ddba');
+	$primary_menu_link = get_background_image();
 	$top_menu_color = get_theme_mod( 'top_nav_color', '#c45c5b' ); 
 	
 	$primary_menu_text_color = get_theme_mod('main_nav_text_color', '#000'); 
@@ -150,10 +151,11 @@ function muzeum_customizer_css() {
 	<style>
 		.main-nav {
 			background-color: <?php echo esc_attr( $primary_menu_color ); // WPCS: XSS ok. ?>;
+			background-image: url("<?php echo esc_url(get_background_image());?>");
 		}
 
 		.main-nav li:hover, .main-nav li.focus {
-			background-color: <?php echo esc_attr(muzeum_brightness( $primary_menu_color, -20 )); // WPCS: XSS ok. ?>;
+			background-color: <?php echo esc_attr(muzeum_brightness( $primary_menu_color, -25 )); // WPCS: XSS ok. ?>;
 			transition: .3s;
 		}
 
@@ -170,11 +172,11 @@ function muzeum_customizer_css() {
 		@media (min-width:40em){
 
 			.main-nav ul ul li {
-				background-color: <?php echo esc_attr(muzeum_brightness( $primary_menu_color, -35 )); // WPCS: XSS ok. ?>;
+				background-color: <?php echo esc_attr(muzeum_brightness( $primary_menu_color, -50 )); // WPCS: XSS ok. ?>;
 			}
 			.main-nav li li:hover,
 			.main-nav li li.focus {
-				background-color: <?php echo esc_attr(muzeum_brightness( $primary_menu_color, -50 )); // WPCS: XSS ok. ?>;
+				background-color: <?php echo esc_attr(muzeum_brightness( $primary_menu_color, -70 )); // WPCS: XSS ok. ?>;
 			}
 		}
 
@@ -186,7 +188,7 @@ function muzeum_customizer_css() {
 		}
 
 		.top-nav li:hover, .top-nav li.focus {
-			background-color: <?php echo muzeum_brightness( $top_menu_color, -20 ); // WPCS: XSS ok. ?>;
+			background-color: <?php echo muzeum_brightness( $top_menu_color, -25 ); // WPCS: XSS ok. ?>;
 			transition: .3s;
 		}
 
@@ -204,11 +206,11 @@ function muzeum_customizer_css() {
 		@media (min-width:40em){
 
 			.top-nav ul ul li {
-				background-color: <?php echo muzeum_brightness( $top_menu_color, -35 ); // WPCS: XSS ok. ?>;
+				background-color: <?php echo muzeum_brightness( $top_menu_color, -50 ); // WPCS: XSS ok. ?>;
 			}
 			.top-nav li li:hover,
 			.top-nav li li.focus {
-				background-color: <?php echo muzeum_brightness( $top_menu_color, -50 ); // WPCS: XSS ok. ?>;
+				background-color: <?php echo muzeum_brightness( $top_menu_color, -75 ); // WPCS: XSS ok. ?>;
 			}
 
 		}

@@ -295,7 +295,7 @@ function muzeum_excerpt_more( $link ) {
 
 add_filter( 'excerpt_more', 'muzeum_excerpt_more' );
 
-/* Add search to top menu bar */
+/* Add search list item to top menu bar */
 
 function muzeum_add_search_box( $items) {
 	ob_start(); ?>
@@ -315,28 +315,61 @@ function muzeum_add_search_box( $items) {
 
 add_filter( 'wp_nav_menu_items','muzeum_add_search_box', 10, 2 );
 
-/* */
+/**
+ * Register Google fonts
+ *
+ * @return string Google fonts URL for the theme.
+ */
+function muzeum_fonts_url() {
+	$fonts_url = '';
+	$fonts     = array();
+	$subsets   = 'latin,latin-ext,cyrillic';
 
-function muzeum_show_search_form_menu_click(){
+	/* translators: If there are characters in your language that are not supported by Concert One, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Alegreya font: on or off', 'muzeum' ) ) {
+		$fonts[] = 'Alegreya:400,400italic,800,800italic';
+	}
 
-	$muzeum_top_search_form = str_replace(array("\n","\r","\r\n"),'', get_search_form( false ));
-?>
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
+	$query_args = array(
+		'family' => urlencode( implode( '|', $fonts ) ),
+		'subset' => urlencode( $subsets ),
+	);
 
-			setTimeout(function(){
-				document.getElementsByClassName('top-search')[0].addEventListener('click', function(){
-					
-					$html = '<li><?php echo $muzeum_top_search_form ?></li>';
-					document.getElementById('top-menu').innerHTML += $html;
-			
-				}, 100);
-			
-			})
-		})
-		
-	</script>
-<?php
+	if ( $fonts ) {
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return esc_url_raw( $fonts_url );
 }
 
-//add_action('wp_footer', 'muzeum_show_search_form_menu_click');
+/**
+ * Add preconnect for Google Fonts for performance
+ *
+ * @since muzeum 1.0.0
+ *
+ * @param array  $urls           URLs to print for resource hints.
+ * @param string $relation_type  The relation type the URLs are printed.
+ * @return array $urls           URLs to print for resource hints.
+ */
+function muzeum_resource_hints( $urls, $relation_type ) {
+	if ( wp_style_is( 'muzeum-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+		$urls[] = array(
+			'href' => 'https://fonts.gstatic.com',
+			'crossorigin',
+		);
+	}
+
+	return $urls;
+}
+add_filter( 'wp_resource_hints', 'muzeum_resource_hints', 10, 2 );
+
+
+/**
+ * Enqueue fonts
+ */
+
+function muzeum_fonts() { 
+	//Add google fonts
+	wp_enqueue_style( 'muzeum-custom-fonts', muzeum_fonts_url(), array(), null );
+}
+add_action( 'wp_enqueue_scripts', 'muzeum_fonts' );

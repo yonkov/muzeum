@@ -1,9 +1,13 @@
 .site-title a {
     text-decoration: none;
+    font-family: "Alegreya";
+    font-size: 40px;
+    font-style: italic;
 }
 .site-description {
     margin-bottom: 0;
     padding-bottom: 2em;
+    font-style: italic;
 }
 .site-branding{
     text-align: center;
