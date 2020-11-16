@@ -10,9 +10,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<?php muzeum_post_thumbnail(); ?>
+<?php muzeum_post_thumbnail('large'); ?>
 	<header class="entry-header">
-		<?php
+	<?php if ( museum_show_breadcrumbs() ) : ?>
+		<div class="breadcrumb"><?php muzeum_breadcrumbs();?></div>
+	<?php endif;
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :

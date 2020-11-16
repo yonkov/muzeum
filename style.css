@@ -71,7 +71,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .top-search-form .close {
     display: block;
     position: absolute;
-    top: 2px;
+    top: 0;
     right: 0;
     font-size: 16px;
 }
@@ -81,5 +81,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
         width: auto;
         top: 0;
         bottom: auto;
+    }
+    .top-nav .search-form .form-group input {
+      display: inline-block;
+      height: 32px;
     }
 }

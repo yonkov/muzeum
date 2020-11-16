@@ -12,7 +12,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <?php muzeum_post_thumbnail(); ?>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	<?php if ( museum_show_breadcrumbs() ) : ?>
+		<div class="breadcrumb"><?php muzeum_breadcrumbs();?></div>
+	<?php endif;
+		the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php if ( get_edit_post_link() ) :
 			muzeum_entry_header();
 		endif; ?>

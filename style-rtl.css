@@ -456,6 +456,8 @@ textarea {
 
 .top-nav .search-form .form-group input {
   border: none;
+  height: 30px;
+  display: inline-block;
 }
 
 .top-nav .top-search {
@@ -490,7 +492,7 @@ textarea {
 .top-search-form .close {
   display: block;
   position: absolute;
-  top: 2px;
+  top: 0px;
   left: 0;
   font-size: 16px;
 }
@@ -786,6 +788,12 @@ textarea {
   padding-top: 2em;
 }
 
+/* Archives */
+
+.page-title > ion-icon {
+  padding-left: 10px;
+}
+
 /* Navigation */
 
 /* Mobile menu hidden by default */
@@ -796,7 +804,6 @@ textarea {
 
 #top-menu {
   position: relative;
-  line-height: 24px;
 }
 
 .site-menu a {

@@ -53,7 +53,7 @@ function muzeum_colors_section_customize ($wp_customize) {
 	if ( has_nav_menu( 'menu-1' ) ) :
 
 		//Top Menu Background
-		$wp_customize->add_setting( 'top_nav_color' , array(
+		$wp_customize->add_setting('top_nav_color', array(
 			'default'     => "#c45c5b",
 			'sanitize_callback' => 'sanitize_hex_color'
 		) );
@@ -113,7 +113,7 @@ function muzeum_colors_section_customize ($wp_customize) {
 	
 		$wp_customize->add_setting( 'show_default_logo', array(
 				'default' => 1,
-				'sanitize_callback' => 'sanitize_text_field',
+				'sanitize_callback' => 'muzeum_sanitize_checkbox',
 			)
 		);
 
@@ -125,6 +125,7 @@ function muzeum_colors_section_customize ($wp_customize) {
 		);
 
 	endif;
+	
 	
 }
 
@@ -145,17 +146,19 @@ function muzeum_customizer_css() {
 	$links_text_color = get_theme_mod('links_textcolor', '#253e80');
 	$headings_text_color = get_theme_mod('headings_textcolor', '#333');
 	$sidebar_text_color = get_theme_mod('sidebar_link_textcolor', '#666');
-	
+
 	?>
 
 	<style>
 		.main-nav {
 			background-color: <?php echo esc_attr( $primary_menu_color ); // WPCS: XSS ok. ?>;
-			background-image: url("<?php echo esc_url(get_background_image());?>");
+			<?php if(!empty(get_background_image())) : ?> background-image: url("<?php echo esc_url(get_background_image());?>"); <?php endif; ?>
 		}
 
 		.main-nav li:hover, .main-nav li.focus {
-			background-color: <?php echo esc_attr(muzeum_brightness( $primary_menu_color, -25 )); // WPCS: XSS ok. ?>;
+			background-color: <?php echo esc_attr(muzeum_brightness( $primary_menu_color, -35 )); // WPCS: XSS ok. ?>;
+			<?php if(!empty(get_background_image())) : ?> background-image: url("<?php echo esc_url(get_background_image());?>"); <?php endif; ?>
+
 			transition: .3s;
 		}
 
@@ -173,10 +176,14 @@ function muzeum_customizer_css() {
 
 			.main-nav ul ul li {
 				background-color: <?php echo esc_attr(muzeum_brightness( $primary_menu_color, -50 )); // WPCS: XSS ok. ?>;
+				<?php if(!empty(get_background_image())) : ?> background-image: url("<?php echo esc_url(get_background_image());?>"); <?php endif; ?>
+
 			}
 			.main-nav li li:hover,
 			.main-nav li li.focus {
-				background-color: <?php echo esc_attr(muzeum_brightness( $primary_menu_color, -70 )); // WPCS: XSS ok. ?>;
+				background-color: <?php echo esc_attr(muzeum_brightness( $primary_menu_color, -75 )); // WPCS: XSS ok. ?>;
+				<?php if(!empty(get_background_image())) : ?> background-image: url("<?php echo esc_url(get_background_image());?>"); <?php endif; ?>
+
 			}
 		}
 
@@ -244,7 +251,7 @@ add_action( 'wp_head', 'muzeum_customizer_css' );
 function muzeum_register_blog_theme_customizer( $wp_customize ) {
     $wp_customize->add_section( 'blog_options', array(
         'title'       => esc_html__( 'Post Settings', 'muzeum' ),
-        'description' => esc_html__( 'Choose what post meta information to show in the post archives or individual blog posts. The post meta information includes published date, author, category tags or comments. You can display or remove this information if you want.', 'muzeum' ),
+        'description' => esc_html__( 'Choose what type of post information to show in the post archives or individual blog posts. The post meta information includes published date, author, category tags or comments. You can display or remove this information if you want. You can also enable or disable breadcrumbs. Breadcrumbs can improve user experience by making it easier for your readers to navigate on the website.', 'muzeum' ),
 	) );
 	/* Show categories entry meta */
     $wp_customize->add_setting( 'show_post_categories', array(
@@ -298,6 +305,28 @@ function muzeum_register_blog_theme_customizer( $wp_customize ) {
     $wp_customize->add_control( 'show_post_comments', array(
         'label'       => esc_html__( 'Show Comments', 'muzeum' ),
         'description' => esc_html__( 'Display the number of comments.', 'muzeum' ),
+        'section'     => 'blog_options',
+        'type'        => 'checkbox',
+	) );
+	/* Show or hide breadcrumbs */
+	$wp_customize->add_setting( 'show_breadcrumbs', array(
+        'default'           => 1,
+        'sanitize_callback' => 'muzeum_sanitize_checkbox',
+    ) );
+    $wp_customize->add_control( 'show_breadcrumbs', array(
+        'label'       => esc_html__( 'Show breadcrumbs on posts', 'muzeum' ),
+        'description' => esc_html__( 'Show simple breadcrumps on single posts', 'muzeum' ),
+        'section'     => 'blog_options',
+        'type'        => 'checkbox',
+	) );
+
+	$wp_customize->add_setting( 'show_page_breadcrumbs', array(
+        'default'           => 1,
+        'sanitize_callback' => 'muzeum_sanitize_checkbox',
+    ) );
+    $wp_customize->add_control( 'show_page_breadcrumbs', array(
+        'label'       => esc_html__( 'Show breadcrumbs on pages', 'muzeum' ),
+        'description' => esc_html__( 'Show simple breadcrumps on pages', 'muzeum' ),
         'section'     => 'blog_options',
         'type'        => 'checkbox',
     ) );

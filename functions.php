@@ -136,9 +136,9 @@ function muzeum_widgets_init() {
 	);
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 1', 'highstarter' ),
+		'name'          => __( 'Footer 1', 'muzeum' ),
 		'id'            => 'sidebar-2',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'highstarter' ),
+		'description'   => __( 'Add widgets here to appear in your footer.', 'muzeum' ),
 		'before_widget' => '<section id="%1$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="heading">',
@@ -148,9 +148,9 @@ function muzeum_widgets_init() {
 	);
 
 	register_sidebar( array(
-		'name'          => __( 'Footer 2', 'highstarter' ),
+		'name'          => __( 'Footer 2', 'muzeum' ),
 		'id'            => 'sidebar-3',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'highstarter' ),
+		'description'   => __( 'Add widgets here to appear in your footer.', 'muzeum' ),
 		'before_widget' => '<section id="%1$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -373,3 +373,28 @@ function muzeum_fonts() {
 	wp_enqueue_style( 'muzeum-custom-fonts', muzeum_fonts_url(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'muzeum_fonts' );
+
+/**
+ * Add very simple breadcrumps to posts and pages
+ * @since v.1.0.0
+ */ 
+function muzeum_breadcrumbs() { 
+    
+	if( is_front_page() ) return; ?>
+
+    <a href="<?php echo esc_url( home_url() );?>"><?php _e( 'Home', 'muzeum' ); ?></a>
+
+    <?php
+    if (is_category() || is_single()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        the_category(' &bull; ');
+            if (is_single()) {
+                echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
+                the_title();
+            }
+    } elseif (is_page()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        echo the_title();
+    }
+
+}
