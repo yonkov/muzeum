@@ -54,7 +54,7 @@ function muzeum_colors_section_customize ($wp_customize) {
 
 		//Top Menu Background
 		$wp_customize->add_setting('top_nav_color', array(
-			'default'     => "#c45c5b",
+			'default'     => "#b06500",
 			'sanitize_callback' => 'sanitize_hex_color'
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'top_nav_color', array(
@@ -138,7 +138,7 @@ function muzeum_customizer_css() {
 
 	$primary_menu_color = get_theme_mod( 'main_nav_color', '#f1ddba');
 	$primary_menu_link = get_background_image();
-	$top_menu_color = get_theme_mod( 'top_nav_color', '#c45c5b' ); 
+	$top_menu_color = get_theme_mod( 'top_nav_color', '#b06500' ); 
 	
 	$primary_menu_text_color = get_theme_mod('main_nav_text_color', '#000'); 
 	$top_menu_text_color = get_theme_mod('top_nav_text_color', '#fff'); 

@@ -10,7 +10,7 @@ Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: muzeum
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned.
@@ -29,61 +29,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import url("static/css/normalize.css");
 @import url("static/css/header.css");
 @import url("static/css/navigation.css");
+@import url("static/css/top-search.css");
 @import url("static/css/wrapper.css");
 @import url("static/css/sidebar.css");
 @import url("static/css/search-widget.css");
 @import url("static/css/entry-meta.css");
 @import url("static/css/footer.css");
-
-.top-nav .search-form .form-group input {
-  border: none;
-}
-
-.top-nav .top-search {
-  display: block;
-  position: static;
-}
-
-.top-search-form {
-  display: none;
-}
-
-.open .top-search-form {
-  display: block;
-  width: 100%;
-  position: absolute;
-  z-index: 9999;
-  bottom: -1em;
-}
-
-.open .top-search-form .icon {
-  display: none;
-}
-
-.top-search-form input::placeholder {
-  font-size: 14px;
-}
-
-.close {
-    display: none;
-}
-
-.top-search-form .close {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 16px;
-}
-
-@media (min-width: 40em) {
-    .open .top-search-form {
-        width: auto;
-        top: 0;
-        bottom: auto;
-    }
-    .top-nav .search-form .form-group input {
-      display: inline-block;
-      height: 32px;
-    }
-}

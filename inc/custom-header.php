@@ -19,8 +19,8 @@
 
 register_default_headers( array(
     'default-image' => array(
-        'url'           => get_template_directory_uri() . '/static/img/background.jpg',
-        'thumbnail_url' => get_template_directory_uri() . '/static/img/background.jpg',
+        'url'           => get_template_directory_uri() . '/static/img/transparent-header.png',
+        'thumbnail_url' => get_template_directory_uri() . '/static/img/transparent-header.png',
         'description'   => __( 'Default Header Image', 'muzeum' )
     ),
 ) );
@@ -31,10 +31,10 @@ function muzeum_custom_header_setup() {
 		apply_filters(
 			'muzeum_custom_header_args',
 			array(
-				'default-image'      => get_template_directory_uri() . '/static/img/background.jpg',
+				'default-image'      => get_template_directory_uri() . '/static/img/transparent-header.png',
 				'default-text-color' => '000000',
-				'width'              => 1000,
-				'height'             => 250,
+				'width'              => 2200,
+				'height'             => 370,
 				'flex-height'        => true,
 				'wp-head-callback'   => 'muzeum_header_style',
 			)
@@ -66,7 +66,7 @@ if ( ! function_exists( 'muzeum_header_style' ) ) :
 		<?php if (has_header_image()) : ?>
 			.site-branding {
 				background-image: url(<?php header_image(); ?>);
-				background-repeat: repeat;
+				background-repeat: no-repeat;
 				background-size: cover;
 			}
 		<?php endif;	

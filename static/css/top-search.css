@@ -1,0 +1,52 @@
+.top-nav .search-form .form-group input {
+  border: none;
+}
+
+.top-nav .top-search {
+  display: block;
+  position: static;
+}
+
+.top-search-form {
+  display: none;
+}
+
+.open .top-search-form {
+  display: block;
+  width: 100%;
+  position: absolute;
+  z-index: 9999;
+  bottom: -1em;
+}
+
+.open .top-search-form .icon {
+  display: none;
+}
+
+.top-search-form input::placeholder {
+  font-size: 14px;
+}
+
+.close {
+  display: none;
+}
+
+.top-search-form .close {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 16px;
+}
+
+@media (min-width: 40em) {
+  .open .top-search-form {
+    width: auto;
+    top: 0;
+    bottom: auto;
+  }
+  .top-nav .search-form .form-group input {
+    display: inline-block;
+    height: 35px;
+  }
+}

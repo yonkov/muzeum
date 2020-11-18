@@ -156,10 +156,6 @@
   display: none;
 }
 
-.top-search-form input::placeholder {
-  font-size: 14px;
-}
-
 .close {
   display: none;
 }
@@ -186,7 +182,6 @@
   }
 
   .site-menu {
-    font-size: 14px;
     margin-bottom: 50px;
   }
 

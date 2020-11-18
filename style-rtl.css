@@ -456,7 +456,7 @@ textarea {
 
 .top-nav .search-form .form-group input {
   border: none;
-  height: 30px;
+  height: 35px;
   display: inline-block;
 }
 
@@ -479,10 +479,6 @@ textarea {
 
 .open .top-search-form .icon {
   display: none;
-}
-
-.top-search-form input::placeholder {
-  font-size: 14px;
 }
 
 .close {
@@ -794,6 +790,10 @@ textarea {
   padding-left: 10px;
 }
 
+.sticky h2 a{
+  color: red;
+}
+
 /* Navigation */
 
 /* Mobile menu hidden by default */
@@ -924,7 +924,6 @@ textarea {
   }
 
   .site-menu {
-    font-size: 14px;
     margin-bottom: 50px;
   }
 
@@ -1090,7 +1089,7 @@ ion-icon {
 }
 
 #secondary .widget .tagcloud a {
-  color: #a7a6a6;
+  color: #666;
   border: 1px solid #a7a6a6;
   padding: 0 15px;
   line-height: 32px;
@@ -1106,7 +1105,6 @@ ion-icon {
 }
 
 #secondary .widget .tagcloud a:hover {
-  color: #fff;
   border-color: #9d9d9d;
   background-color: #9d9d9d;
 }
