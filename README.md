@@ -11,19 +11,19 @@ To use the theme's customizer, log in to your dashboard and navigate to Appearan
 The theme supports a right sidebar and you can add as many widgets as you want there. You can add a widget from dashboard > widgets.
 
 ### Footer Widgets
-In addition to the right sidebar you can add widgets to two defined regions in the footer. They are named "Footer 1" and "Footer 2". These will be arranged in a beautiful multi-column layout. The theme works best if you add just one widget in Footer 1 and two widgets in Footer 2. In this way, you should have 3 widgets in the footer in total. You can add a footer widget from dashboard > widgets.
+In addition to the right sidebar, you can add widgets to two defined regions in the footer. They are named "Footer 1" and "Footer 2". These will be arranged in a beautiful multi-column layout. The theme works best if you add just one widget in Footer 1 and two widgets in Footer 2. In this way, you should have 3 widgets in the footer in total. You can add a footer widget from dashboard > widgets.
 
 ### Breadcrumbs
-Muzeum has built-in simple breadcrumbs for posts and pages. You can choose whether to display or remove them from the theme customizer
+Muzeum has a built-in breadcrumb system for posts and pages. You can choose whether to display or remove the breadcrumbs from the theme customizer.
 
 ### Post Meta information
-The theme features beautifully presented post meta information for each post. You can choose whether to show or remove any post meta information (date, category, tag, comments, etc).
+The theme features beautifully presented post meta information for each post. You can choose whether to show or remove any post meta information (date, author, category, tags and comments).
 
 ### Primary Menu
 
-Go to `appearance => menu` and create a menu, then assign it to "Primary" location. This theme supports two menu locations, primary and top. If there is no menu assigned, the primary menu will displayed a list with the site's pages. The top menu bar will be hidden until you asssign a display location from the menu settings.
+Go to `appearance => menu` and create a menu, then assign it to "Primary" location. This theme supports two menu locations, primary and top. If there is no menu assigned to the primary menu location, the primary menu will display a list with all the site's pages. The top menu bar will be hidden until you asssign it to a menu.
 ### Social Icons Menu
-Muzeum theme ships with the beatiful open-source font by the Ionic Team, [ionicons](https://ionicons.com/). To add social media icons (facebook, twitter, etc.) you need to add custom links to the top menu. Don't worry, it is very easy.
+Muzeum theme ships with a beatiful open-source font by the Ionic Team called [ionicons](https://ionicons.com/). To add social media icons (facebook, twitter, etc.) you need to add custom links to the top menu. Don't worry, it is very easy.
 
 After you create a Social Links menu from `appearance => menu => create a new menu`, click on add menu items > custom links and in the link text tab add the following html code:
 
@@ -33,7 +33,7 @@ After you create a Social Links menu from `appearance => menu => create a new me
 
 In the url tab add the exact address of the facebook link, e.g. https://facebook.com/wordpress
 
-You can add as many social icons as you wish. For more information check [ionicons documentation](https://ionicons.com/)
+You can add as many social icons as you wish. For more information, check [ionicons documentation](https://ionicons.com/)
 
 ## License
 This theme, like WordPress, is licensed under the GPL.
