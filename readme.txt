@@ -20,12 +20,6 @@ Lightweight WordPress theme designed for museums, libraries, web journals, archi
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Frequently Asked Questions ==
-
-= Does this theme support any plugins? =
-
-Muzeum includes support for WooCommerce and for Infinite Scroll in Jetpack.
-
 == Changelog ==
 
 = 1.0 - November 2020 =
@@ -35,6 +29,7 @@ Muzeum includes support for WooCommerce and for Infinite Scroll in Jetpack.
 
 * Based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2018 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+* The theme uses code sinppets from [Scaffold theme](https://wordpress.org/themes/scaffold/) (hex to rgb converter), [Highstarter theme](https://wordpress.org/themes/highstarter/) (footer widgets) and [GrandMart theme](https://wordpress.org/themes/grandmart/) (preconnect google fonts). All licensed under [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
 == Resources ==
 * ionicons, https://ionicons.com/, (C) 2013-2020 Ben Sperry, [MIT](https://opensource.org/licenses/MIT)
