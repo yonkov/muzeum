@@ -177,12 +177,18 @@ function muzeum_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'muzeum_scripts' );
 
-
-// Use Ionicons in WordPress
-add_action( 'wp_enqueue_scripts', 'muzeum_enqueue_ionicons' );
-function muzeum_enqueue_ionicons() {
-
-}
+//Enable loading of scripts with custom attributes
+function muzeum_add_type_module_attribute($tag, $handle) {
+	if ( $handle !== 'muzeum-ionicons' ) {
+	   return $tag;
+	}
+	// needed in case you already have a type='javascript' attribute
+	$new_tag = str_replace("type='text/javascript'", '', $tag);
+	// adding type='module'
+	$new_tag = str_replace(" src", " type='module' src", $tag);
+	return $new_tag;
+ }
+ add_filter('script_loader_tag', 'muzeum_add_type_module_attribute', 10, 2);
 
 /**
  * Implement the Custom Header feature.

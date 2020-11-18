@@ -34,10 +34,11 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.4s ease-in-out, border-color 0.4s ease-in-out, color 0.4s ease-in-out;
 }
 
 .widget-area .widget .tagcloud a:hover {
+    color: #fff;
     border-color: #9d9d9d;
     background-color: #9d9d9d;
 }
