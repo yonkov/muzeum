@@ -17,11 +17,11 @@ In addition to the right sidebar, you can add widgets to two defined regions in 
 Muzeum has a built-in breadcrumb system for posts and pages. You can choose whether to display or remove the breadcrumbs from the theme customizer.
 
 ### Post Meta information
-The theme features beautifully presented post meta information for each post. You can choose whether to show or remove any post meta information (date, author, category, tags and comments).
+The theme displays post meta information for each post. You can choose whether to show or remove any post meta information (date, author, category, tags and comments).
 
 ### Primary Menu
 
-Go to `appearance => menu` and create a menu, then assign it to "Primary" location. This theme supports two menu locations, primary and top. If there is no menu assigned to the primary menu location, the primary menu will display a list with all the site's pages. The top menu bar will be hidden until you asssign it to a menu.
+Go to `appearance => menu` and create a menu, then assign it to "Primary" location. This theme supports two menu locations, "Primary" and "Top". If there is no menu assigned to the primary menu location, the primary menu will display a list with all the site's pages. The top menu bar will be hidden until you asssign it to a menu.
 ### Social Icons Menu
 Muzeum theme ships with a beatiful open-source font by the Ionic Team called [ionicons](https://ionicons.com/). To add social media icons (facebook, twitter, etc.) you need to add custom links to the top menu. Don't worry, it is very easy.
 
@@ -29,6 +29,9 @@ After you create a Social Links menu from `appearance => menu => create a new me
 
 ```html
 <ion-icon name="logo-facebook"></ion-icon>
+<ion-icon name="logo-twitter"></ion-icon>
+<ion-icon name="logo-youtube"></ion-icon>
+<ion-icon name="mail"></ion-icon>
 ```
 
 In the url tab add the exact address of the facebook link, e.g. https://facebook.com/wordpress
