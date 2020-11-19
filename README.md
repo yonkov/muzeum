@@ -25,7 +25,7 @@ Go to `appearance => menu` and create a menu, then assign it to "Primary" locati
 ### Social Icons Menu
 Muzeum theme ships with a beatiful open-source font by the Ionic Team called [ionicons](https://ionicons.com/). To add social media icons (facebook, twitter, etc.) you need to add custom links to the top menu. Don't worry, it is very easy.
 
-After you create a Social Links menu from `appearance => menu => create a new menu`, click on add menu items > custom links and in the link text tab add the following html code:
+After you create a Social Links menu from `appearance => menu => create a new menu`, click on `add menu items => custom links` and in the `Link Text` tab add the following html code:
 
 ```html
 <ion-icon name="logo-facebook"></ion-icon>
