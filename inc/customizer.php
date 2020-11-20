@@ -97,6 +97,17 @@ function muzeum_colors_section_customize ($wp_customize) {
 		'section' => 'colors',
 	)));
 
+	// Buttons color
+	$wp_customize->add_setting('btn_bgr_color', array(
+		'default' => "#F2DEB9",
+		'sanitize_callback' => 'sanitize_hex_color'
+	));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'btn_bgr_color', array(
+		'label' => esc_html__('Buttons Color', 'estera'),
+		'section' => 'colors',
+	)));
+
 	// Sidebar Links Text color
 	$wp_customize->add_setting('sidebar_link_textcolor', array(
 		'default' => "#666",
@@ -146,6 +157,8 @@ function muzeum_customizer_css() {
 	$links_text_color = get_theme_mod('links_textcolor', '#253e80');
 	$headings_text_color = get_theme_mod('headings_textcolor', '#333');
 	$sidebar_text_color = get_theme_mod('sidebar_link_textcolor', '#666');
+	
+	$btn_bgr_color = get_theme_mod('btn_bgr_color', '#F2DEB9');
 
 	?>
 
@@ -194,8 +207,15 @@ function muzeum_customizer_css() {
 			background-color: <?php echo esc_attr( $top_menu_color ); // WPCS: XSS ok. ?>;
 		}
 
+		.top-nav input[type="search"]:-webkit-autofill,
+		.top-nav input[type="search"]:-webkit-autofill:hover, 
+		.top-nav input[type="search"]:-webkit-autofill:focus, 
+		.top-nav input[type="search"]:-webkit-autofill:active  {
+			-webkit-box-shadow: 0 0 0 30px <?php echo esc_attr( $top_menu_color ); ?> inset;
+		}
+
 		.top-nav li:hover, .top-nav li.focus {
-			background-color: <?php echo muzeum_brightness( $top_menu_color, -25 ); // WPCS: XSS ok. ?>;
+			background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -25 ) ); // WPCS: XSS ok. ?>;
 			transition: .3s;
 		}
 
@@ -210,17 +230,24 @@ function muzeum_customizer_css() {
 			color: <?php echo esc_attr($top_menu_text_color); ?>;
 		}
 
+		.top-nav input[type="search"]:-webkit-autofill {
+			-webkit-text-fill-color: <?php echo esc_attr($top_menu_text_color); ?>;
+			caret-color: <?php echo esc_attr($top_menu_text_color); ?>;
+		}
+
 		@media (min-width:40em){
 
 			.top-nav ul ul li {
-				background-color: <?php echo muzeum_brightness( $top_menu_color, -50 ); // WPCS: XSS ok. ?>;
+				background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -50 ) ); // WPCS: XSS ok. ?>;
 			}
 			.top-nav li li:hover,
 			.top-nav li li.focus {
-				background-color: <?php echo muzeum_brightness( $top_menu_color, -75 ); // WPCS: XSS ok. ?>;
+				background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -75 ) ); // WPCS: XSS ok. ?>;
 			}
 
 		}
+
+	<?php endif; ?>
 
 		a {
 			color: <?php echo esc_attr($links_text_color); ?>;
@@ -234,7 +261,12 @@ function muzeum_customizer_css() {
 			color: <?php echo esc_attr($sidebar_text_color); ?>;
 		}
 
-	<?php endif; ?>
+		button,
+			input[type="button"],
+			input[type="reset"],
+			input[type="submit"] {
+				background: <?php echo esc_attr($btn_bgr_color); ?>;
+		}
 
 	</style>
 	<?php

@@ -303,12 +303,17 @@ add_filter( 'excerpt_more', 'muzeum_excerpt_more' );
 
 /* Add search list item to top menu bar */
 
-function muzeum_add_search_box( $items) {
+function muzeum_add_search_box( $items, $args) {
+	// stop execution if it is not the top menu
+	if( $args->theme_location !== 'menu-1' ) {
+		return $items;
+	}
+	
 	ob_start(); ?>
 	
 	<li class="top-search">
 		<a href="#" class="search-icon">
-			<ion-icon name="search-outline"></ion-icon>
+			<ion-icon name="search"></ion-icon>
 		</a>
 		<div class="top-search-form"><?php get_search_form(); ?></div>
 	</li> <?php

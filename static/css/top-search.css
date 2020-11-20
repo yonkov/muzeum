@@ -23,6 +23,11 @@
   display: none;
 }
 
+.top-search-form .form-control,
+.top-search-form .form-control:focus {
+  color: #fff;
+}
+
 .top-search-form input::placeholder {
   font-size: 14px;
 }
@@ -34,12 +39,15 @@
 .top-search-form .close {
   display: block;
   position: absolute;
-  top: 0;
+  top: 1px;
   right: 0;
-  font-size: 16px;
 }
 
 @media (min-width: 40em) {
+  .search-icon {
+    position: relative;
+    top: 1px;
+  }
   .open .top-search-form {
     width: auto;
     top: 0;
@@ -47,6 +55,6 @@
   }
   .top-nav .search-form .form-group input {
     display: inline-block;
-    height: 35px;
+    height: 33px;
   }
 }
