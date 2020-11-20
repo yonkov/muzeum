@@ -33,5 +33,4 @@ Lightweight WordPress theme designed for museums, libraries, web journals, archi
 
 == Resources ==
 * ionicons, https://ionicons.com/, (C) 2013-2020 Ben Sperry, [MIT](https://opensource.org/licenses/MIT)
-* default theme logo, https://www.svgrepo.com/svg/125274/museum-frontal-building, (C) 2020 SVG Repo, [CCO License](https://creativecommons.org/publicdomain/zero/1.0/)
-* The header image an the background image in the theme are GPL released by the theme's author, [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+* The header image, the background image and the theme logo are created and GPL released by the theme's author, [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
