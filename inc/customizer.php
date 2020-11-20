@@ -82,7 +82,7 @@ function muzeum_colors_section_customize ($wp_customize) {
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'headings_textcolor', array(
-		'label' => esc_html__('Headings Text Color', 'estera'),
+		'label' => esc_html__('Headings Text Color', 'muzeum'),
 		'section' => 'colors',
 	)));
 
@@ -93,7 +93,7 @@ function muzeum_colors_section_customize ($wp_customize) {
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'links_textcolor', array(
-		'label' => esc_html__('Links Text Color', 'estera'),
+		'label' => esc_html__('Links Text Color', 'muzeum'),
 		'section' => 'colors',
 	)));
 
@@ -104,7 +104,7 @@ function muzeum_colors_section_customize ($wp_customize) {
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'btn_bgr_color', array(
-		'label' => esc_html__('Buttons Color', 'estera'),
+		'label' => esc_html__('Buttons Color', 'muzeum'),
 		'section' => 'colors',
 	)));
 
@@ -115,7 +115,7 @@ function muzeum_colors_section_customize ($wp_customize) {
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'sidebar_link_textcolor', array(
-		'label' => esc_html__('Sidebar Links Color', 'estera'),
+		'label' => esc_html__('Sidebar Links Color', 'muzeum'),
 		'section' => 'colors',
 	)));
 

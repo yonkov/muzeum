@@ -2,7 +2,7 @@
     <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
         <div class="form-group">
             <label for="s">
-                <span class="screen-reader-text"><?php echo _x( 'Search for:', 'muzeum' ) ?></span>
+                <span class="screen-reader-text"><?php _e( 'Search for:', 'muzeum' ) ?></span>
                 <button class="icon">
                     <ion-icon name="search-outline"></ion-icon>
                 </button>
