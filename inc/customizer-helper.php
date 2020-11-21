@@ -86,7 +86,7 @@ function muzeum_brightness( $hex, $steps ) {
 }
 
 /* Check to show or hide breadcrumbs */
-function museum_show_breadcrumbs(){
+function muzeum_show_breadcrumbs(){
 	
 	return is_single() ? get_theme_mod( 'show_breadcrumbs', 1 ) : get_theme_mod( 'show_page_breadcrumbs', 1 );
 

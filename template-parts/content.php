@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <?php muzeum_post_thumbnail('large'); ?>
 	<header class="entry-header">
-	<?php if ( museum_show_breadcrumbs() ) : ?>
+	<?php if ( muzeum_show_breadcrumbs() ) : ?>
 		<div class="breadcrumb"><?php muzeum_breadcrumbs();?></div>
 	<?php endif;
 		if ( is_singular() ) :
