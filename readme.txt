@@ -8,11 +8,9 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-A starter theme called Muzeum.
-
 == Description ==
 
-Lightweight WordPress theme designed for museums, libraries, web journals, archives, history websites and blogs. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized ionicons font icons. Muzeum is a highly performant theme. It does not use any additional libraries or frameworks. It features clean html5/css templates and core WordPress functions. If you are looking for a high quality WordPress theme, you have found it.
+Lightweight WordPress theme designed for museums, libraries, web journals, archives, history websites and blogs. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized ionicons font icons. Muzeum is a highly performant theme. It does not use any additional libraries or frameworks. It features clean, mobile-first html5/css templates and core WordPress functions. If you are looking for a high quality WordPress theme, you have found it.
 
 == Installation ==
 
@@ -22,7 +20,7 @@ Lightweight WordPress theme designed for museums, libraries, web journals, archi
 
 == Changelog ==
 
-= 1.0 - November 2020 =
+= 1.0.0 - November 2020 =
 * Initial release
 
 == Credits ==

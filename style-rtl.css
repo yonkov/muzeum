@@ -375,7 +375,7 @@ input[type="submit"] {
   border-radius: 3px;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1;
-  padding: 9px 20px;
+  padding: 8.5px 20px;
   cursor: pointer;
 }
 
@@ -822,7 +822,7 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 .site-title a {
   text-decoration: none;
   font-family: "Alegreya";
-  font-size: 40px;
+  font-size: 2.5rem;
   font-style: italic;
 }
 .site-description {
@@ -1297,12 +1297,6 @@ a.imprint {
 
 .site-footer ul > li a {
   font-size: 0.8em;
-}
-
-@media screen and (min-width: 994px) {
-  .site-footer .search-form-wrap {
-    width: 70%;
-  }
 }
 
 .footer-meta {

@@ -3,7 +3,7 @@ Theme Name: Muzeum
 Theme URI: https://github.com/yonkov/muzeum
 Author: Atanas Yonkov
 Author URI: https://nasiothemes.com
-Description: Lightweight WordPress theme designed for museums, libraries, web journals, archives, history websites and blogs. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized ionicons font icons. Muzeum is a highly performant theme. It does not use any additional libraries or frameworks. It features clean html5/css templates and core WordPress functions. If you are looking for a high quality WordPress theme, you have found it.
+Description: Lightweight WordPress theme designed for museums, libraries, web journals, archives, history websites and blogs. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized ionicons font icons. Muzeum is a highly performant theme. It does not use any additional libraries or frameworks. It features clean, mobile-first html5/css templates and core WordPress functions. If you are looking for a high quality WordPress theme, you have found it.
 Version: 1.0.0
 Requires at least: 4.4
 Tested up to: 5.4
@@ -11,7 +11,7 @@ Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: muzeum
-Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, two-columns, translation-ready
 Text Domain: muzeum
 
 This theme, like WordPress, is licensed under the GPL.
@@ -28,10 +28,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-
-/*--------------------------------------------------------------
-# Generic
---------------------------------------------------------------*/
 
 @import url("static/css/normalize.css");
 @import url("static/css/header.css");
