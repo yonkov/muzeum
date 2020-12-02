@@ -9,7 +9,7 @@
 
 if ( ! defined( 'MUZEUM_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'MUZEUM_VERSION', '1.0.0' );
+	define( 'MUZEUM_VERSION', '1.0.1' );
 }
 
 if ( ! function_exists( 'muzeum_setup' ) ) :
@@ -135,27 +135,28 @@ function muzeum_widgets_init() {
 		)
 	);
 
-	register_sidebar( array(
-		'name'          => __( 'Footer 1', 'muzeum' ),
-		'id'            => 'sidebar-2',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'muzeum' ),
-		'before_widget' => '<section id="%1$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="heading">',
-		'after_title'   => '</h3>',
-		) 
-
+	register_sidebar(
+		array(
+			'name'          => __( 'Footer 1', 'muzeum' ),
+			'id'            => 'sidebar-2',
+			'description'   => __( 'Add widgets here to appear in your footer.', 'muzeum' ),
+			'before_widget' => '<section id="%1$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="heading">',
+			'after_title'   => '</h3>',
+		)
 	);
 
-	register_sidebar( array(
-		'name'          => __( 'Footer 2', 'muzeum' ),
-		'id'            => 'sidebar-3',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'muzeum' ),
-		'before_widget' => '<section id="%1$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-		) 
+	register_sidebar(
+		array(
+			'name'          => __( 'Footer 2', 'muzeum' ),
+			'id'            => 'sidebar-3',
+			'description'   => __( 'Add widgets here to appear in your footer.', 'muzeum' ),
+			'before_widget' => '<section id="%1$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
 	);
 }
 add_action( 'widgets_init', 'muzeum_widgets_init' );
@@ -177,18 +178,18 @@ function muzeum_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'muzeum_scripts' );
 
-//Enable loading of scripts with custom attributes
-function muzeum_add_type_module_attribute($tag, $handle) {
+// Enable loading of scripts with custom attributes
+function muzeum_add_type_module_attribute( $tag, $handle ) {
 	if ( $handle !== 'muzeum-ionicons' ) {
-	   return $tag;
+		return $tag;
 	}
 	// needed in case you already have a type='javascript' attribute
-	$new_tag = str_replace("type='text/javascript'", '', $tag);
+	$new_tag = str_replace( "type='text/javascript'", '', $tag );
 	// adding type='module'
-	$new_tag = str_replace(" src", " type='module' src", $tag);
+	$new_tag = str_replace( ' src', " type='module' src", $tag );
 	return $new_tag;
- }
- add_filter('script_loader_tag', 'muzeum_add_type_module_attribute', 10, 2);
+}
+ add_filter( 'script_loader_tag', 'muzeum_add_type_module_attribute', 10, 2 );
 
 /**
  * Implement the Custom Header feature.
@@ -216,26 +217,27 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Add option to add site logo from the customizer
  * Since WordPress 4.5
  */
-function muzeum_the_logo(){
+function muzeum_the_logo() {
 
-	$show_default_logo = get_theme_mod('show_default_logo', 1);
+	$show_default_logo = get_theme_mod( 'show_default_logo', 1 );
 
 	// shim for wp versions older than 4.5
-	if(!function_exists('the_custom_logo')){
+	if ( ! function_exists( 'the_custom_logo' ) ) {
 		return;
 	}
 
-	//Display the default theme logo if no logo is specified
-	if ( !has_custom_logo() ) :
+	// Display the default theme logo if no logo is specified
+	if ( ! has_custom_logo() ) :
 		// if user did not remove the default theme logo
-		if ($show_default_logo) : ?>
+		if ( $show_default_logo ) : ?>
 			<img class="default-logo custom-logo"
-			src="<?php echo esc_url( get_template_directory_uri()); ?>/static/img/museum-logo.png"
-			alt="<?php echo esc_attr('muzeum theme logo')?>" />
-		<?php endif;
+			src="<?php echo esc_url( get_template_directory_uri() ); ?>/static/img/museum-logo.png"
+			alt="<?php echo esc_attr( 'muzeum theme logo' ); ?>" />
+			<?php
+		endif;
 
-	else: 
-	//allow the user to upload cutom logo and replace the theme logo
+	else :
+		// allow the user to upload cutom logo and replace the theme logo
 
 		the_custom_logo();
 
@@ -244,35 +246,37 @@ function muzeum_the_logo(){
 
 /* Post Pagination on Archives */
 function muzeum_the_posts_navigation() {
-    $muzeum_prev_arrow = ( is_rtl() ? '&rarr;' : '&larr;' );
-    $muzeum_next_arrow = ( is_rtl() ? '&larr;' : '&rarr;' );
-    				the_posts_navigation( array(
-        'prev_text'          => $muzeum_prev_arrow . __( ' Older posts', 'muzeum' ),
-        'next_text'          => __( 'Newer posts', 'muzeum' ) . $muzeum_next_arrow,
-        'screen_reader_text' => __( 'Posts navigation', 'muzeum' )
-    ) );
+	$muzeum_prev_arrow = ( is_rtl() ? '&rarr;' : '&larr;' );
+	$muzeum_next_arrow = ( is_rtl() ? '&larr;' : '&rarr;' );
+					the_posts_navigation(
+						array(
+							'prev_text'          => $muzeum_prev_arrow . __( ' Older posts', 'muzeum' ),
+							'next_text'          => __( 'Newer posts', 'muzeum' ) . $muzeum_next_arrow,
+							'screen_reader_text' => __( 'Posts navigation', 'muzeum' ),
+						)
+					);
 }
 
 /* Post navigation in single.php */
 function muzeum_the_post_navigation() {
-    $muzeum_prev_arrow = ( is_rtl() ? '&rarr;' : '&larr;' );
-    $muzeum_next_arrow = ( is_rtl() ? '&larr;' : '&rarr;' );
-    the_post_navigation( array(
-        'prev_text' => '<span class="nav-subtitle">' . $muzeum_prev_arrow . '</span> <span class="nav-title">%title</span>',
-        'next_text' => '<span class="nav-title">%title </span>' . '<span class="nav-subtitle">' . $muzeum_next_arrow . '</span>',
-        'screen_reader_text' => __( 'Posts navigation', 'muzeum' )
-        ) );
+	$muzeum_prev_arrow = ( is_rtl() ? '&rarr;' : '&larr;' );
+	$muzeum_next_arrow = ( is_rtl() ? '&larr;' : '&rarr;' );
+	the_post_navigation(
+		array(
+			'prev_text'          => '<span class="nav-subtitle">' . $muzeum_prev_arrow . '</span> <span class="nav-title">%title</span>',
+			'next_text'          => '<span class="nav-title">%title </span>' . '<span class="nav-subtitle">' . $muzeum_next_arrow . '</span>',
+			'screen_reader_text' => __( 'Posts navigation', 'muzeum' ),
+		)
+	);
 }
 
 /* Show the correct icon on post archives */
-function muzeum_archive_page_icon(){
-	if(is_category()){
-		return '<ion-icon name="folder-outline"></ion-icon>' ;
-	}
-	else if(is_tag()){
+function muzeum_archive_page_icon() {
+	if ( is_category() ) {
+		return '<ion-icon name="folder-outline"></ion-icon>';
+	} elseif ( is_tag() ) {
 		return '<ion-icon name="pricetags-outline"></ion-icon>';
-	}
-	else if (is_author()){
+	} elseif ( is_author() ) {
 		return '<ion-icon name="person-outline"></ion-icon>';
 	}
 }
@@ -287,44 +291,46 @@ function muzeum_archive_page_icon(){
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
 function muzeum_excerpt_more( $link ) {
-    if ( is_admin() ) {
-        return $link;
-    }
-    $link = sprintf(
-        '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
-        esc_url( get_permalink( get_the_ID() ) ),
-        /* translators: %s: Name of current post */
-        sprintf( __( 'Read the full post %1$s<span class="screen-reader-text">"%2$s"</span>', 'muzeum' ), ( is_rtl() ? '&larr;' : '&rarr;' ), esc_html( get_the_title( get_the_ID() ) ) )
-    );
-    return ' &hellip; ' . $link;
+	if ( is_admin() ) {
+		return $link;
+	}
+	$link = sprintf(
+		'<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
+		esc_url( get_permalink( get_the_ID() ) ),
+		/* translators: %s: Name of current post */
+		sprintf( __( 'Read the full post %1$s<span class="screen-reader-text">"%2$s"</span>', 'muzeum' ), ( is_rtl() ? '&larr;' : '&rarr;' ), esc_html( get_the_title( get_the_ID() ) ) )
+	);
+	return ' &hellip; ' . $link;
 }
 
 add_filter( 'excerpt_more', 'muzeum_excerpt_more' );
 
 /* Add search list item to top menu bar */
 
-function muzeum_add_search_box( $items, $args) {
+function muzeum_add_search_box( $items, $args ) {
 	// stop execution if it is not the top menu
-	if( $args->theme_location !== 'menu-1' ) {
+	if ( $args->theme_location !== 'menu-1' ) {
 		return $items;
 	}
-	
-	ob_start(); ?>
+
+	ob_start();
+	?>
 	
 	<li class="top-search">
 		<a href="#" class="search-icon">
 			<ion-icon name="search"></ion-icon>
 		</a>
 		<div class="top-search-form"><?php get_search_form(); ?></div>
-	</li> <?php
+	</li> 
+	<?php
 
-    $items .= ob_get_clean();
+	$items .= ob_get_clean();
 
-    return $items;
-	
+	return $items;
+
 }
 
-add_filter( 'wp_nav_menu_items','muzeum_add_search_box', 10, 2 );
+add_filter( 'wp_nav_menu_items', 'muzeum_add_search_box', 10, 2 );
 
 /**
  * Register Google fonts
@@ -339,7 +345,7 @@ function muzeum_fonts_url() {
 	/* translators: If there are characters in your language that are not supported by Concert One, translate this to 'off'. Do not translate into your own language. */
 	if ( 'off' !== _x( 'on', 'Alegreya font: on or off', 'muzeum' ) ) {
 		$fonts[] = 'Alegreya:400,400italic,800,800italic';
-	}
+	} 
 
 	$query_args = array(
 		'family' => urlencode( implode( '|', $fonts ) ),
@@ -379,33 +385,64 @@ add_filter( 'wp_resource_hints', 'muzeum_resource_hints', 10, 2 );
  * Enqueue fonts
  */
 
-function muzeum_fonts() { 
-	//Add google fonts
+function muzeum_fonts() {
+	// Add google fonts
 	wp_enqueue_style( 'muzeum-custom-fonts', muzeum_fonts_url(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'muzeum_fonts' );
 
 /**
  * Add very simple breadcrumps to posts and pages
+ *
  * @since v.1.0.0
- */ 
-function muzeum_breadcrumbs() { 
-    
-	if( is_front_page() ) return; ?>
+ */
+function muzeum_breadcrumbs() {
 
-    <a href="<?php echo esc_url( home_url() );?>"><?php _e( 'Home', 'muzeum' ); ?></a>
+	if ( is_front_page() ) {
+		return;
+	}
+	?>
 
-    <?php
-    if (is_category() || is_single()) {
-        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-        the_category(' &bull; ');
-            if (is_single()) {
-                echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
-                the_title();
-            }
-    } elseif (is_page()) {
-        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-        echo the_title();
-    }
+	<a href="<?php echo esc_url( home_url() ); ?>"><?php _e( 'Home', 'muzeum' ); ?></a>
 
+	<?php
+	if ( is_category() || is_single() ) {
+		echo '&nbsp;&nbsp;&#187;&nbsp;&nbsp;';
+		the_category( ' &bull; ' );
+		if ( is_single() ) {
+			echo ' &nbsp;&nbsp;&#187;&nbsp;&nbsp; ';
+			the_title();
+		}
+	} elseif ( is_page() ) {
+		echo '&nbsp;&nbsp;&#187;&nbsp;&nbsp;';
+		echo the_title();
+	}
+
+}
+
+/**
+ * Call to action button on homepage
+ *
+ * @since v.1.0.1
+ */
+function muzeum_call_to_action() {
+	if ( is_front_page() || is_home() ) :
+
+		$banner_label = get_theme_mod( 'banner_label', __( 'Get Started', 'muzeum' ) );
+		$banner_link  = get_theme_mod( 'banner_link', '#' );
+
+		if ( $banner_label && $banner_link ) :
+			?>
+	
+		<button class="call-to-action">
+			<a href="<?php echo esc_url( $banner_link ); ?>" 
+				aria-label="<?php printf( /* translators: get started */ esc_attr__( 'Get Started', 'muzeum' ) ); ?>">
+				<?php printf( /* translators: right arrow (LTR) / left arrow (RTL) */ esc_html( $banner_label ) . ' ' . '%s', is_rtl() ? '&larr;' : '&rarr;' ); ?>
+			</a>
+		</button>
+
+			<?php
+		endif;
+
+	endif;
 }

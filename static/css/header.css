@@ -6,7 +6,7 @@
 }
 .site-description {
     margin-bottom: 0;
-    padding-bottom: 2em;
+    padding-bottom: 1.5em;
     font-style: italic;
 }
 .site-branding{
@@ -14,6 +14,22 @@
 }
 .custom-logo {
     padding-top: 2em;
+}
+.call-to-action {
+    margin-bottom: 1.5em;
+    background-color: transparent;
+    border-radius: 7px;
+    padding: 11px 22px;
+    transition: .5s all;
+}
+
+.call-to-action:hover {
+    box-shadow: 4px 3px 7px 1px rgba(0,0,0,.12);
+}
+
+.call-to-action a:hover{
+    text-decoration: none;
+    opacity: 1;
 }
 
 /* Archives */
@@ -24,4 +40,10 @@
 
 .sticky h2 a{
     color: #b06500;
+}
+
+@media (min-width: 40em) {
+    .custom-logo {
+        padding-top: 0;
+    }
 }

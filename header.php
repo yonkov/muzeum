@@ -55,7 +55,8 @@
 			<?php $muzeum_description = get_bloginfo( 'description', 'display' );
 			if ( $muzeum_description || is_customize_preview() ) : ?>
 				<p class="site-description"><?php echo $muzeum_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+			<?php endif;
+			muzeum_call_to_action(); ?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="site-menu main-nav">

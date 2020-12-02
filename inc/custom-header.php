@@ -15,7 +15,8 @@
 
 register_default_headers( array(
     'default-image' => array(
-        'url'           => get_template_directory_uri() . '/static/img/transparent-header.png',
+		'url'           => get_template_directory_uri() . '/static/img/transparent-header.png',
+		'thumbnail_url' => get_template_directory_uri() . '/static/img/transparent-header.png',
         'description'   => __( 'Default Header Image', 'muzeum' )
     ),
 ) );
@@ -29,7 +30,7 @@ function muzeum_custom_header_setup() {
 				'default-image'      => get_template_directory_uri() . '/static/img/transparent-header.png',
 				'default-text-color' => '000000',
 				'width'              => 2200,
-				'height'             => 370,
+				'height'             => 480,
 				'flex-height'        => true,
 				'wp-head-callback'   => 'muzeum_header_style',
 			)

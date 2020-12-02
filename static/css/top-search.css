@@ -16,7 +16,7 @@
   width: 100%;
   position: absolute;
   z-index: 9999;
-  bottom: -1em;
+  bottom: 0;
 }
 
 .open .top-search-form .icon {
@@ -54,7 +54,6 @@
     bottom: auto;
   }
   .top-nav .search-form .form-group input {
-    display: inline-block;
-    height: 33px;
+    height: 34px;
   }
 }

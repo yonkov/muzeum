@@ -5,9 +5,6 @@
 /* Main nav background color */
 
 .main-nav {
-  /*background-color: #c0a154;
-  background-color: #f1ddba;
-  background: #f1ddba url('http://localhost/wp-content/themes/muzeum/static/img/whitenoise-360x370.png') repeat scroll top right !important; */
   box-shadow: 4px 3px 9px 0px rgba(153,153,153, .7);
 }
 
@@ -223,8 +220,8 @@
   }
 
   .top-nav a {
-    padding: 0px 20px;
-    margin: 5px 0;
+    padding: 5px 20px;
+    margin: 0;
   }
 
   /* Top Search */

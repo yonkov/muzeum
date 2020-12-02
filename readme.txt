@@ -1,10 +1,10 @@
 === Muzeum ===
 Contributors: nravota12
 Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, two-columns, translation-ready
-Requires at least: 4.4
+Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 5.5
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,9 @@ Lightweight WordPress theme designed for museums, libraries, web journals, archi
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.0.1 - December 2020 =
+* Get Started Button
 
 = 1.0.0 - November 2020 =
 * Initial release
