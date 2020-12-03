@@ -1,8 +1,8 @@
 <?php
 
 function muzeum_customize_script(){
-    wp_enqueue_style( 'muzeum-customize-css', get_template_directory_uri() . '/inc/customizer/customize.css', array(), muzeum_VERSION );
-    wp_enqueue_script( 'muzeum-customize-js', get_template_directory_uri() . '/inc/customizer/customize.js', array( 'jquery', 'customize-controls' ), muzeum_VERSION, true );
+    wp_enqueue_style( 'muzeum-customize-css', get_template_directory_uri() . '/inc/customizer/customize.css', array(), MUZEUM_VERSION );
+    wp_enqueue_script( 'muzeum-customize-js', get_template_directory_uri() . '/inc/customizer/customize.js', array( 'jquery', 'customize-controls' ), MUZEUM_VERSION, true );
 
 }
 
