@@ -13,11 +13,14 @@
  */
 
  /* Call Custom Sanitization Functions */
-require get_template_directory() . '/inc/sanitization-functions.php';
+require get_template_directory() . '/inc/customizer/sanitization-functions.php';
 
 
 /* Customizer Helper Functions. */
-require get_template_directory() . '/inc/customizer-helper.php';
+require get_template_directory() . '/inc/customizer/customizer-helper.php';
+
+/* Go Pro Section */
+require get_template_directory() . '/inc/customizer/go-pro.php';
 
 /**
  * Customize Colors Section in the theme customizer.
@@ -25,7 +28,68 @@ require get_template_directory() . '/inc/customizer-helper.php';
  * @package muzeum
  * @since 1.0.0
  */
+
 function muzeum_colors_section_customize( $wp_customize ) {
+
+	// Call to Action Background color
+	$wp_customize->add_setting(
+		'header_btn_bgr_color',
+		array(
+			'default'           => false,
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'header_btn_bgr_color',
+			array(
+				'label'   => esc_html__( 'Header Button Color', 'muzeum' ),
+				'section' => 'colors',
+			)
+		)
+	);
+
+	// Call to Action Border color
+	$wp_customize->add_setting(
+		'header_btn_border_color',
+		array(
+			'default'           => '#666',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'header_btn_border_color',
+			array(
+				'label'   => esc_html__( 'Header Button Border Color', 'muzeum' ),
+				'section' => 'colors',
+			)
+		)
+	);
+
+	// Call to Action Text color
+	$wp_customize->add_setting(
+		'header_btn_text_color',
+		array(
+			'default'           => '#333',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'header_btn_text_color',
+			array(
+				'label'   => esc_html__( 'Header Button Text Color', 'muzeum' ),
+				'section' => 'colors',
+			)
+		)
+	);
 
 	// Primary Menu Background
 	$wp_customize->add_setting(
@@ -150,66 +214,6 @@ function muzeum_colors_section_customize( $wp_customize ) {
 		)
 	);
 
-	// Call to Action Background color
-	$wp_customize->add_setting(
-		'header_btn_bgr_color',
-		array(
-			'default'           => false,
-			'sanitize_callback' => 'sanitize_hex_color',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'header_btn_bgr_color',
-			array(
-				'label'   => esc_html__( 'Header Button Color', 'muzeum' ),
-				'section' => 'colors',
-			)
-		)
-	);
-
-	// Call to Action Border color
-	$wp_customize->add_setting(
-		'header_btn_border_color',
-		array(
-			'default'           => '#666',
-			'sanitize_callback' => 'sanitize_hex_color',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'header_btn_border_color',
-			array(
-				'label'   => esc_html__( 'Header Button Border Color', 'muzeum' ),
-				'section' => 'colors',
-			)
-		)
-	);
-
-	// Call to Action Text color
-	$wp_customize->add_setting(
-		'header_btn_text_color',
-		array(
-			'default'           => '#333',
-			'sanitize_callback' => 'sanitize_hex_color',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'header_btn_text_color',
-			array(
-				'label'   => esc_html__( 'Header Button Text Color', 'muzeum' ),
-				'section' => 'colors',
-			)
-		)
-	);
-
 	// Buttons color
 	$wp_customize->add_setting(
 		'btn_bgr_color',
@@ -276,170 +280,12 @@ function muzeum_colors_section_customize( $wp_customize ) {
 
 add_action( 'customize_register', 'muzeum_colors_section_customize' );
 
+
 /**
- * Output the Customizer Color Section CSS to wp_head
- */
-function muzeum_customizer_css() {
-
-	$primary_menu_color = get_theme_mod( 'main_nav_color', '#f1ddba' );
-	$primary_menu_link  = get_background_image();
-	$top_menu_color     = get_theme_mod( 'top_nav_color', '#b06500' );
-
-	$primary_menu_text_color = get_theme_mod( 'main_nav_text_color', '#000' );
-	$top_menu_text_color     = get_theme_mod( 'top_nav_text_color', '#fff' );
-
-	$links_text_color    = get_theme_mod( 'links_textcolor', '#253e80' );
-	$headings_text_color = get_theme_mod( 'headings_textcolor', '#333' );
-	$sidebar_text_color  = get_theme_mod( 'sidebar_link_textcolor', '#666' );
-	$call_to_action_bgr = get_theme_mod( 'header_btn_bgr_color', false );
-	$call_to_action_border = get_theme_mod( 'header_btn_border_color', '#666' );
-	$call_to_action_text_color = get_theme_mod( 'header_btn_text_color', '#333' );
-	$btn_bgr_color = get_theme_mod( 'btn_bgr_color', '#F2DEB9' );
-
-	?>
-
-	<style>
-		.main-nav {
-			background-color: <?php echo esc_attr( $primary_menu_color ); // WPCS: XSS ok. ?>;
-			<?php
-			if ( ! empty( get_background_image() ) ) :
-				?>
-				 background-image: url("<?php echo esc_url( get_background_image() ); ?>"); <?php endif; ?>
-		}
-
-		.main-nav li:hover, .main-nav li.focus {
-			background-color: <?php echo esc_attr( muzeum_brightness( $primary_menu_color, -35 ) ); // WPCS: XSS ok. ?>;
-			<?php
-			if ( ! empty( get_background_image() ) ) :
-				?>
-				 background-image: url("<?php echo esc_url( get_background_image() ); ?>"); <?php endif; ?>
-
-			transition: .3s;
-		}
-
-		.main-nav .burger,
-		.main-nav .burger::before,
-		.main-nav .burger::after {
-			border-bottom: 2px solid <?php echo esc_attr( $primary_menu_text_color ); ?>;
-		}
-
-		.main-nav a {
-			color: <?php echo esc_attr( $primary_menu_text_color ); ?>;
-		}
-
-		@media (min-width:40em){
-
-			.main-nav ul ul li {
-				background-color: <?php echo esc_attr( muzeum_brightness( $primary_menu_color, -50 ) ); // WPCS: XSS ok. ?>;
-				<?php
-				if ( ! empty( get_background_image() ) ) :
-					?>
-					 background-image: url("<?php echo esc_url( get_background_image() ); ?>"); <?php endif; ?>
-
-			}
-			.main-nav li li:hover,
-			.main-nav li li.focus {
-				background-color: <?php echo esc_attr( muzeum_brightness( $primary_menu_color, -75 ) ); // WPCS: XSS ok. ?>;
-				<?php
-				if ( ! empty( get_background_image() ) ) :
-					?>
-					 background-image: url("<?php echo esc_url( get_background_image() ); ?>"); <?php endif; ?>
-
-			}
-		}
-
-	<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
-
-		.top-nav,
-		.top-nav .search-form .form-group input {
-			background-color: <?php echo esc_attr( $top_menu_color ); // WPCS: XSS ok. ?>;
-		}
-
-		.top-nav input[type="search"]:-webkit-autofill,
-		.top-nav input[type="search"]:-webkit-autofill:hover, 
-		.top-nav input[type="search"]:-webkit-autofill:focus, 
-		.top-nav input[type="search"]:-webkit-autofill:active  {
-			-webkit-box-shadow: 0 0 0 30px <?php echo esc_attr( $top_menu_color ); ?> inset;
-		}
-
-		.top-nav li:hover, .top-nav li.focus {
-			background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -25 ) ); // WPCS: XSS ok. ?>;
-			transition: .3s;
-		}
-
-		.top-nav .burger,
-		.top-nav .burger::before,
-		.top-nav .burger::after {
-			border-bottom: 2px solid <?php echo esc_attr( $top_menu_text_color ); ?>;
-		}
-
-		.top-nav a,
-		.top-search-form input::placeholder {
-			color: <?php echo esc_attr( $top_menu_text_color ); ?>;
-		}
-
-		.top-nav input[type="search"]:-webkit-autofill {
-			-webkit-text-fill-color: <?php echo esc_attr( $top_menu_text_color ); ?>;
-			caret-color: <?php echo esc_attr( $top_menu_text_color ); ?>;
-		}
-
-		@media (min-width:40em){
-
-			.top-nav ul ul li {
-				background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -50 ) ); // WPCS: XSS ok. ?>;
-			}
-			.top-nav li li:hover,
-			.top-nav li li.focus {
-				background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -75 ) ); // WPCS: XSS ok. ?>;
-			}
-
-		}
-
-	<?php endif; ?>
-
-		a {
-			color: <?php echo esc_attr( $links_text_color ); ?>;
-		}
-
-		.entry-title a, .call-to-action a {
-			color: <?php echo esc_attr( $headings_text_color ); ?>;
-		}
-
-		<?php if ($call_to_action_border) : ?>
-		.call-to-action, .call-to-action:hover {
-			border: 1px solid <?php echo esc_attr( $call_to_action_border ); ?>;
-		}
-		<?php endif; ?>
-
-		<?php if ($call_to_action_bgr) : ?>
-		.call-to-action{
-			background: <?php echo esc_attr( $call_to_action_bgr ); ?>;
-		}
-		<?php endif; ?>
-
-		.call-to-action a {
-			color: <?php echo esc_attr(  $call_to_action_text_color ); ?>;
-		}
-
-		.widget ul a {
-			color: <?php echo esc_attr( $sidebar_text_color ); ?>;
-		}
-
-		button,
-			input[type="button"],
-			input[type="reset"],
-			input[type="submit"] {
-				background: <?php echo esc_attr( $btn_bgr_color ); ?>;
-		}
-
-	</style>
-	<?php
-}
-add_action( 'wp_head', 'muzeum_customizer_css' );
-
-/*
- * HEADER IMAGE OPTIONS
+ * Customize the Header Image Options Section in the theme customizer.
  *
+ * @package muzeum
+ * @since 1.0.1
  */
 
 function muzeum_customize_register_banner_and_header( $wp_customize ) {
@@ -448,10 +294,80 @@ function muzeum_customize_register_banner_and_header( $wp_customize ) {
 		'header_options',
 		array(
 			'title'       => esc_html__( 'Header Options', 'muzeum' ),
-			'description' => esc_html__( 'Customize the call to action button on the header of the Homepage. To Change the colors of the call to action button, navigate to "Colors" section in the theme customizer', 'muzeum' ),
+			'description' => esc_html__( 'Customize the header section and the call to action button on the header of the Homepage. To Change the colors of the call to action button, navigate to "Colors" section in the theme customizer', 'muzeum' ),
 			'priority'    => 99,
 		)
 	);
+
+		// Header background size
+		$wp_customize->add_setting(
+			'header-background-size',
+			array(
+				'default'           => 1,
+				'sanitize_callback' => 'muzeum_sanitize_select',
+			)
+		);
+	
+		$wp_customize->add_control(
+			'header-background-size',
+			array(
+				'label'       => esc_html__( 'Header Background Size', 'muzeum' ),
+				'section'     => 'header_options',
+				'description' => esc_html__( 'Resize the header image to adjust to the width of the whole screen or choose to keep its initial width.', 'muzeum' ),
+				'type'        => 'select',
+				'choices'     => array(
+					0 => esc_html( 'cover' ),
+					1 => esc_html( 'initial' ),
+				),
+			)
+		);
+	
+		// Header Image Position
+		$wp_customize->add_setting(
+			'header-background-position',
+			array(
+				'default'           => 'top',
+				'sanitize_callback' => 'muzeum_sanitize_select',
+			)
+		);
+	
+		$wp_customize->add_control(
+			'header-background-position',
+			array(
+				'label'       => esc_html__( 'Header Background Position', 'muzeum' ),
+				'section'     => 'header_options',
+				'description' => esc_html__( 'Choose how you want to position the header image.', 'muzeum' ),
+				'type'        => 'select',
+				'choices'     => array(
+					'top'    => esc_html( 'top' ),
+					'center' => esc_html( 'center' ),
+					'bottom' => esc_html( 'bottom' ),
+				),
+			)
+		);
+
+		// Header Background Repeat
+		$wp_customize->add_setting(
+			'header-background-repeat',
+			array(
+				'default'           => 1,
+				'sanitize_callback' => 'muzeum_sanitize_select',
+			)
+		);
+	
+		$wp_customize->add_control(
+			'header-background-repeat',
+			array(
+				'label'       => esc_html__( 'Header Background Repeat', 'muzeum' ),
+				'section'     => 'header_options',
+				'description' => esc_html__( 'Choose whether to repeat the header image in order to fill the header area.', 'muzeum' ),
+				'type'        => 'select',
+				'choices'     => array(
+					0 => esc_html( 'no-repeat' ),
+					1 => esc_html( 'repeat' )
+				),
+			)
+		);
 
 	/**
 	 * CALL TO ACTION button on homepage
@@ -636,3 +552,165 @@ function muzeum_register_blog_theme_customizer( $wp_customize ) {
 }
 
 add_action( 'customize_register', 'muzeum_register_blog_theme_customizer' );
+
+
+/**
+ * Output the Customizer Color Section CSS to wp_head
+ */
+function muzeum_customizer_css() {
+
+	$primary_menu_color = get_theme_mod( 'main_nav_color', '#f1ddba' );
+	$primary_menu_link  = get_background_image();
+	$top_menu_color     = get_theme_mod( 'top_nav_color', '#b06500' );
+
+	$primary_menu_text_color = get_theme_mod( 'main_nav_text_color', '#000' );
+	$top_menu_text_color     = get_theme_mod( 'top_nav_text_color', '#fff' );
+
+	$links_text_color    = get_theme_mod( 'links_textcolor', '#253e80' );
+	$headings_text_color = get_theme_mod( 'headings_textcolor', '#333' );
+	$sidebar_text_color  = get_theme_mod( 'sidebar_link_textcolor', '#666' );
+	$call_to_action_bgr = get_theme_mod( 'header_btn_bgr_color', false );
+	$call_to_action_border = get_theme_mod( 'header_btn_border_color', '#666' );
+	$call_to_action_text_color = get_theme_mod( 'header_btn_text_color', '#333' );
+	$btn_bgr_color = get_theme_mod( 'btn_bgr_color', '#F2DEB9' );
+
+	?>
+
+	<style>
+		.main-nav {
+			background-color: <?php echo esc_attr( $primary_menu_color ); // WPCS: XSS ok. ?>;
+			<?php
+			if ( ! empty( get_background_image() ) ) :
+				?>
+				 background-image: url("<?php echo esc_url( get_background_image() ); ?>"); <?php endif; ?>
+		}
+
+		.main-nav li:hover, .main-nav li.focus {
+			background-color: <?php echo esc_attr( muzeum_brightness( $primary_menu_color, -35 ) ); // WPCS: XSS ok. ?>;
+			<?php
+			if ( ! empty( get_background_image() ) ) :
+				?>
+				 background-image: url("<?php echo esc_url( get_background_image() ); ?>"); <?php endif; ?>
+
+			transition: .3s;
+		}
+
+		.main-nav .burger,
+		.main-nav .burger::before,
+		.main-nav .burger::after {
+			border-bottom: 2px solid <?php echo esc_attr( $primary_menu_text_color ); ?>;
+		}
+
+		.main-nav a {
+			color: <?php echo esc_attr( $primary_menu_text_color ); ?>;
+		}
+
+		@media (min-width:40em){
+
+			.main-nav ul ul li {
+				background-color: <?php echo esc_attr( muzeum_brightness( $primary_menu_color, -50 ) ); // WPCS: XSS ok. ?>;
+				<?php
+				if ( ! empty( get_background_image() ) ) :
+					?>
+					 background-image: url("<?php echo esc_url( get_background_image() ); ?>"); <?php endif; ?>
+
+			}
+			.main-nav li li:hover,
+			.main-nav li li.focus {
+				background-color: <?php echo esc_attr( muzeum_brightness( $primary_menu_color, -75 ) ); // WPCS: XSS ok. ?>;
+				<?php
+				if ( ! empty( get_background_image() ) ) :
+					?>
+					 background-image: url("<?php echo esc_url( get_background_image() ); ?>"); <?php endif; ?>
+
+			}
+		}
+
+	<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+
+		.top-nav,
+		.top-nav .search-form .form-group input {
+			background-color: <?php echo esc_attr( $top_menu_color ); // WPCS: XSS ok. ?>;
+		}
+
+		.top-nav input[type="search"]:-webkit-autofill,
+		.top-nav input[type="search"]:-webkit-autofill:hover, 
+		.top-nav input[type="search"]:-webkit-autofill:focus, 
+		.top-nav input[type="search"]:-webkit-autofill:active  {
+			-webkit-box-shadow: 0 0 0 30px <?php echo esc_attr( $top_menu_color ); ?> inset;
+		}
+
+		.top-nav li:hover, .top-nav li.focus {
+			background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -25 ) ); // WPCS: XSS ok. ?>;
+			transition: .3s;
+		}
+
+		.top-nav .burger,
+		.top-nav .burger::before,
+		.top-nav .burger::after {
+			border-bottom: 2px solid <?php echo esc_attr( $top_menu_text_color ); ?>;
+		}
+
+		.top-nav a,
+		.top-search-form input::placeholder {
+			color: <?php echo esc_attr( $top_menu_text_color ); ?>;
+		}
+
+		.top-nav input[type="search"]:-webkit-autofill {
+			-webkit-text-fill-color: <?php echo esc_attr( $top_menu_text_color ); ?>;
+			caret-color: <?php echo esc_attr( $top_menu_text_color ); ?>;
+		}
+
+		@media (min-width:40em){
+
+			.top-nav ul ul li {
+				background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -50 ) ); // WPCS: XSS ok. ?>;
+			}
+			.top-nav li li:hover,
+			.top-nav li li.focus {
+				background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -75 ) ); // WPCS: XSS ok. ?>;
+			}
+
+		}
+
+	<?php endif; ?>
+
+		a {
+			color: <?php echo esc_attr( $links_text_color ); ?>;
+		}
+
+		.entry-title a, .call-to-action a {
+			color: <?php echo esc_attr( $headings_text_color ); ?>;
+		}
+
+		<?php if ($call_to_action_border) : ?>
+		.call-to-action, .call-to-action:hover {
+			border: 1px solid <?php echo esc_attr( $call_to_action_border ); ?>;
+		}
+		<?php endif; ?>
+
+		<?php if ($call_to_action_bgr) : ?>
+		.call-to-action{
+			background: <?php echo esc_attr( $call_to_action_bgr ); ?>;
+		}
+		<?php endif; ?>
+
+		.call-to-action a {
+			color: <?php echo esc_attr(  $call_to_action_text_color ); ?>;
+		}
+
+		.widget ul a {
+			color: <?php echo esc_attr( $sidebar_text_color ); ?>;
+		}
+
+		button,
+			input[type="button"],
+			input[type="reset"],
+			input[type="submit"] {
+				background: <?php echo esc_attr( $btn_bgr_color ); ?>;
+		}
+
+	</style>
+	<?php
+}
+add_action( 'wp_head', 'muzeum_customizer_css' );

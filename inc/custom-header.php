@@ -13,13 +13,15 @@
  * @uses muzeum_header_style()
  */
 
-register_default_headers( array(
-    'default-image' => array(
-		'url'           => get_template_directory_uri() . '/static/img/transparent-header.png',
-		'thumbnail_url' => get_template_directory_uri() . '/static/img/transparent-header.png',
-        'description'   => __( 'Default Header Image', 'muzeum' )
-    ),
-) );
+register_default_headers(
+	array(
+		'default-image' => array(
+			'url'           => get_template_directory_uri() . '/static/img/transparent-header.png',
+			'thumbnail_url' => get_template_directory_uri() . '/static/img/transparent-header.png',
+			'description'   => __( 'Default Header Image', 'muzeum' ),
+		),
+	)
+);
 
 function muzeum_custom_header_setup() {
 	add_theme_support(
@@ -47,17 +49,22 @@ if ( ! function_exists( 'muzeum_header_style' ) ) :
 	 * @see muzeum_custom_header_setup().
 	 */
 	function muzeum_header_style() {
-		$header_text_color = get_header_textcolor();
+		$header_text_color   = get_header_textcolor();
+		$background_position = get_theme_mod( 'header-background-position', 'top' );
+		$has_background_size     = get_theme_mod( 'header-background-size', 1 );
+		$has_background_repeat   = get_theme_mod( 'header-background-repeat', 1 );
 
 		?>
 		<style type="text/css">
-		<?php if (has_header_image()) : ?>
+		<?php if ( has_header_image() ) : ?>
 			.site-branding {
 				background-image: url(<?php header_image(); ?>);
-				background-repeat: no-repeat;
-				background-size: cover;
+				background-position: <?php echo esc_attr( $background_position ); ?>;
+				<?php if ( !$has_background_size ) : ?> background-size: cover; <?php endif; ?>
+				<?php if ( !$has_background_repeat ) : ?> background-repeat: no-repeat; <?php endif; ?>
 			}
-		<?php endif;	
+			<?php
+		endif;
 		// Has the text been hidden?
 		if ( ! display_header_text() ) :
 			?>

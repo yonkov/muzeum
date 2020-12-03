@@ -5,20 +5,21 @@
  * navigation support for dropdown menus.
  */
 ( function() {
-	var topNavigation = document.getElementById( 'top-navigation' );
+	var topNavigation, topMenu;
+	if (document.getElementById( 'top-navigation' )) {
+		topNavigation = document.getElementById( 'top-navigation' );
+		topMenu = topNavigation.getElementsByTagName( 'ul' )[ 0 ];
+		if ( ! topMenu.classList.contains( 'nav-menu' ) ) {
+			topMenu.classList.add( 'nav-menu' );
+		}
+	}
+
 	var siteNavigation = document.getElementById( 'site-navigation' );
-
 	var menuButtons = document.querySelectorAll('.site-menu .menu-toggle');
-
-	var topMenu = topNavigation.getElementsByTagName( 'ul' )[ 0 ];
 	var siteMenu = siteNavigation.getElementsByTagName( 'ul' )[ 0 ];
 
 	if ( ! siteMenu.classList.contains( 'nav-menu' ) ) {
 		siteMenu.classList.add( 'nav-menu' );
-	}
-
-	if ( ! topMenu.classList.contains( 'nav-menu' ) ) {
-		topMenu.classList.add( 'nav-menu' );
 	}
 
 	// Toggle the .toggled class and the aria-expanded value each time a menu button is clicked.
@@ -52,7 +53,9 @@
 
 	// Get all the link elements within all site menus
 	var primaryLinks = siteMenu.getElementsByTagName( 'a' );
-	var topLinks = topMenu.getElementsByTagName( 'a' );
+	var topLinks = function (){
+		return topMenu.getElementsByTagName( 'a' ) ? topMenu.getElementsByTagName( 'a' ) : '';
+	}
 	var topNodes = Array.prototype.slice.apply(topLinks);
     var primaryNodes = Array.prototype.slice.apply(primaryLinks);
 	var links = topNodes.concat(primaryNodes);
@@ -100,17 +103,22 @@
 	}
 
 	/* Top Menu Search form */
+	var searchIcon = document.getElementsByClassName('search-icon')[0];
+	var searchClose = document.getElementsByClassName('close')[0];
 
-	document.getElementsByClassName('search-icon')[0].addEventListener('click', function(e){
-		e.preventDefault();
-		var searchForm = this.parentNode;
-		this.parentNode.classList.toggle('open');
-
-		document.getElementsByClassName('close')[0].addEventListener('click', function(e){
+	if(searchIcon){
+		searchIcon.addEventListener('click', function(e){
 			e.preventDefault();
-			searchForm.classList.remove('open');
+			var searchForm = this.parentNode;
+			this.parentNode.classList.toggle('open');
+	
+			searchClose.addEventListener('click', function(e){
+				e.preventDefault();
+				searchForm.classList.remove('open');
+			})
+	
 		})
 
-	})
+	}
 
 }() );
