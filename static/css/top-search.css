@@ -39,7 +39,7 @@
 .top-search-form .close {
   display: block;
   position: absolute;
-  top: 1px;
+  top: 0;
   right: 0;
 }
 
@@ -48,12 +48,15 @@
     position: relative;
     top: 1px;
   }
+  .top-search-form .close {
+    top: 1px;
+  }
   .open .top-search-form {
     width: auto;
     top: 0;
     bottom: auto;
   }
   .top-nav .search-form .form-group input {
-    height: 34px;
+    height: 35px;
   }
 }

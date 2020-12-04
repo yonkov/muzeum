@@ -5,7 +5,7 @@
 /* Main nav background color */
 
 .main-nav {
-  box-shadow: 4px 3px 9px 0px rgba(153,153,153, .7);
+  box-shadow: 4px 3px 9px 0px rgba(153, 153, 153, 0.7);
 }
 
 /* Mobile menu hidden by default */
@@ -26,7 +26,11 @@
   display: block;
   text-decoration: none;
   padding: 7px 15px;
-  opacity: .9;
+  opacity: 0.9;
+}
+
+.site-menu .menu > li > a:hover {
+  transition: .4s all;
 }
 
 .site-menu li li {
@@ -219,6 +223,9 @@
     opacity: 0.75;
   }
 
+  .top-nav {
+    min-height: 35px;
+  }
   .top-nav a {
     padding: 5px 20px;
     margin: 0;

@@ -168,6 +168,7 @@ function muzeum_scripts() {
 	wp_enqueue_style( 'muzeum-style', get_stylesheet_uri(), array(), MUZEUM_VERSION );
 	wp_style_add_data( 'muzeum-style', 'rtl', 'replace' );
 	// Load Ionicons font
+	wp_enqueue_script( 'muzeum-ionicons-module', get_template_directory_uri() . '/static/js/ionicons/ionicons.esm.js', array(), '5.2.3', true );
 	wp_enqueue_script( 'muzeum-ionicons', get_template_directory_uri() . '/static/js/ionicons/ionicons.js', array(), '5.2.3', true );
 
 	wp_enqueue_script( 'muzeum-navigation', get_template_directory_uri() . '/static/js/navigation.js', array(), MUZEUM_VERSION, true );
@@ -178,9 +179,9 @@ function muzeum_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'muzeum_scripts' );
 
-// Enable loading of scripts with custom attributes
+// Append type="module" to Ionicons module script
 function muzeum_add_type_module_attribute( $tag, $handle ) {
-	if ( $handle !== 'muzeum-ionicons' ) {
+	if ( $handle !== 'muzeum-ionicons-module' ) {
 		return $tag;
 	}
 	// needed in case you already have a type='javascript' attribute
@@ -189,7 +190,7 @@ function muzeum_add_type_module_attribute( $tag, $handle ) {
 	$new_tag = str_replace( ' src', " type='module' src", $tag );
 	return $new_tag;
 }
- add_filter( 'script_loader_tag', 'muzeum_add_type_module_attribute', 10, 2 );
+add_filter( 'script_loader_tag', 'muzeum_add_type_module_attribute', 10, 2 );
 
 /**
  * Implement the Custom Header feature.

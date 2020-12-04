@@ -585,14 +585,12 @@ function muzeum_customizer_css() {
 				 background-image: url("<?php echo esc_url( get_background_image() ); ?>"); <?php endif; ?>
 		}
 
-		.main-nav li:hover, .main-nav li.focus {
+		.main-nav li a:hover, .main-nav li.focus > a {
 			background-color: <?php echo esc_attr( muzeum_brightness( $primary_menu_color, -35 ) ); // WPCS: XSS ok. ?>;
 			<?php
 			if ( ! empty( get_background_image() ) ) :
 				?>
 				 background-image: url("<?php echo esc_url( get_background_image() ); ?>"); <?php endif; ?>
-
-			transition: .3s;
 		}
 
 		.main-nav .burger,
@@ -615,8 +613,17 @@ function muzeum_customizer_css() {
 					 background-image: url("<?php echo esc_url( get_background_image() ); ?>"); <?php endif; ?>
 
 			}
-			.main-nav li li:hover,
-			.main-nav li li.focus {
+			.main-nav li li a:hover,
+			.main-nav li li.focus > a {
+				background-color: <?php echo esc_attr( muzeum_brightness( $primary_menu_color, -75 ) ); // WPCS: XSS ok. ?>;
+				<?php
+				if ( ! empty( get_background_image() ) ) :
+					?>
+					 background-image: url("<?php echo esc_url( get_background_image() ); ?>"); <?php endif; ?>
+
+			}
+
+			.main-nav li li li.focus a {
 				background-color: <?php echo esc_attr( muzeum_brightness( $primary_menu_color, -75 ) ); // WPCS: XSS ok. ?>;
 				<?php
 				if ( ! empty( get_background_image() ) ) :
@@ -640,8 +647,8 @@ function muzeum_customizer_css() {
 			-webkit-box-shadow: 0 0 0 30px <?php echo esc_attr( $top_menu_color ); ?> inset;
 		}
 
-		.top-nav li:hover, .top-nav li.focus {
-			background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -25 ) ); // WPCS: XSS ok. ?>;
+		.top-nav li a:hover, .top-nav li.focus a {
+			background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -15 ) ); // WPCS: XSS ok. ?>;
 			transition: .3s;
 		}
 
@@ -651,7 +658,9 @@ function muzeum_customizer_css() {
 			border-bottom: 2px solid <?php echo esc_attr( $top_menu_text_color ); ?>;
 		}
 
-		.top-nav a,
+		.top-nav a {
+			color: <?php echo esc_attr( $top_menu_text_color ); ?>;
+		}
 		.top-search-form input::placeholder {
 			color: <?php echo esc_attr( $top_menu_text_color ); ?>;
 		}
@@ -664,11 +673,14 @@ function muzeum_customizer_css() {
 		@media (min-width:40em){
 
 			.top-nav ul ul li {
-				background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -50 ) ); // WPCS: XSS ok. ?>;
+				background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -25 ) ); // WPCS: XSS ok. ?>;
 			}
-			.top-nav li li:hover,
-			.top-nav li li.focus {
-				background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -75 ) ); // WPCS: XSS ok. ?>;
+			.top-nav li li a:hover,
+			.top-nav li li.focus > a {
+				background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -35 ) ); // WPCS: XSS ok. ?>;
+			}
+			.top-nav li li li.focus a {
+				background-color: <?php echo esc_attr( muzeum_brightness( $top_menu_color, -35 ) ); // WPCS: XSS ok. ?>;
 			}
 
 		}

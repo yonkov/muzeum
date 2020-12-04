@@ -346,7 +346,6 @@ table {
 /* Links */
 a {
   text-decoration: none;
-  transition: 0.5s;
 }
 
 a:hover,
@@ -504,7 +503,7 @@ textarea {
 .top-search-form .close {
   display: block;
   position: absolute;
-  top: 1px;
+  top: 0px;
   left: 0;
   font-size: 16px;
 }
@@ -531,13 +530,16 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     position: relative;
     top: 1px;
   }
+  .top-search-form .close{
+    top: 1px;
+  }
   .open .top-search-form {
     width: auto;
     top: 0;
     bottom: auto;
   }
   .top-nav .search-form .form-group input {
-    height: 34px;
+    height: 35px;
   }
 
   input[type="search"]::-webkit-search-cancel-button {
@@ -884,6 +886,10 @@ input[type="search"]:focus::-webkit-search-cancel-button {
   text-indent: 15px;
 }
 
+.site-menu .menu > li > a:hover {
+  transition: .4s all;
+}
+
 .site-menu li li li {
   text-indent: 30px;
 }
@@ -1070,7 +1076,9 @@ input[type="search"]:focus::-webkit-search-cancel-button {
     padding-right: 5px;
     opacity: 0.75;
   }
-
+  .top-nav {
+    min-height: 35px;
+  }
   .top-nav a {
     padding: 5px 20px;
   }

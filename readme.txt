@@ -21,7 +21,7 @@ Lightweight WordPress theme designed for museums, libraries, web journals, archi
 == Changelog ==
 
 = 1.0.1 - December 2020 =
-* Get Started Button
+* Get Started Button, add compatibility for IE11
 
 = 1.0.0 - November 2020 =
 * Initial release
