@@ -306,6 +306,7 @@ li > ul,
 li > ol {
   margin-bottom: 0;
   margin-left: 1.5em;
+  padding-left: .5em;
 }
 
 dt {
@@ -495,6 +496,13 @@ textarea {
   flex: 1 0 50%;
 }
 
+#comments > .comment-list > .comment {
+  padding-bottom: 2.5em;
+}
+
+.comment-list, .comment-list ol {
+  list-style: none;
+}
 .comment-list {
   margin-left: 0;
   padding-left: 0;

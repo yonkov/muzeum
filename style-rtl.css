@@ -313,6 +313,7 @@ li > ul,
 li > ol {
   margin-bottom: 0;
   margin-right: 1.5em;
+  padding-right: .5em;
 }
 
 dt {
@@ -606,6 +607,13 @@ input[type="search"]:focus::-webkit-search-cancel-button {
   flex: 1 0 50%;
 }
 
+#comments > .comment-list > .comment {
+  padding-bottom: 2.5em;
+}
+
+.comment-list, .comment-list ol {
+  list-style: none;
+}
 .comment-list {
   margin-right: 0;
   padding-right: 0;
