@@ -4,7 +4,7 @@ Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu,
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 5.5
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,9 @@ Lightweight WordPress theme without any libraries or frameworks, designed for mu
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.0.2 - December 2020 =
+* Update theme screenshot
 
 = 1.0.1 - December 2020 =
 * Add Get Started Button, add compatibility for IE11, fix backward compatibility issues, Update screenshot and docs, format code
