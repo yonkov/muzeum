@@ -247,13 +247,13 @@ function muzeum_the_logo() {
 function muzeum_the_posts_navigation() {
 	$muzeum_prev_arrow = ( is_rtl() ? '&rarr;' : '&larr;' );
 	$muzeum_next_arrow = ( is_rtl() ? '&larr;' : '&rarr;' );
-					the_posts_navigation(
-						array(
-							'prev_text'          => $muzeum_prev_arrow . __( ' Older posts', 'muzeum' ),
-							'next_text'          => __( 'Newer posts', 'muzeum' ) . $muzeum_next_arrow,
-							'screen_reader_text' => __( 'Posts navigation', 'muzeum' ),
-						)
-					);
+	the_posts_navigation(
+		array(
+			'prev_text'          => $muzeum_prev_arrow . __( ' Older posts', 'muzeum' ),
+			'next_text'          => __( 'Newer posts', 'muzeum' ) . $muzeum_next_arrow,
+			'screen_reader_text' => __( 'Posts navigation', 'muzeum' ),
+		)
+	);
 }
 
 /* Post navigation in single.php */
@@ -344,7 +344,7 @@ function muzeum_fonts_url() {
 	/* translators: If there are characters in your language that are not supported by Concert One, translate this to 'off'. Do not translate into your own language. */
 	if ( 'off' !== _x( 'on', 'Alegreya font: on or off', 'muzeum' ) ) {
 		$fonts[] = 'Alegreya:400,400italic,800,800italic';
-	} 
+	}
 
 	$query_args = array(
 		'family' => urlencode( implode( '|', $fonts ) ),
