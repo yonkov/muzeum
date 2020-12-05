@@ -21,7 +21,7 @@ Lightweight WordPress theme without any libraries or frameworks, designed for mu
 == Changelog ==
 
 = 1.0.2 - December 2020 =
-* Update theme screenshot
+* Update theme screenshot, css fixes
 
 = 1.0.1 - December 2020 =
 * Add Get Started Button, add compatibility for IE11, fix backward compatibility issues, Update screenshot and docs, format code

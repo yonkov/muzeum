@@ -468,7 +468,7 @@ textarea {
 }
 
 .hentry {
-  padding-bottom: 2em;
+  padding-bottom: 2.5em;
 }
 
 .site-main .comment-navigation,
@@ -496,7 +496,7 @@ textarea {
   flex: 1 0 50%;
 }
 
-#comments > .comment-list > .comment {
+.comment-body {
   padding-bottom: 2.5em;
 }
 

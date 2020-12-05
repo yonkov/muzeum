@@ -462,7 +462,7 @@ textarea {
 }
 
 .hentry {
-  padding-bottom: 2em;
+  padding-bottom: 2.5em;
 }
 
 /* Top Search */
@@ -607,7 +607,7 @@ input[type="search"]:focus::-webkit-search-cancel-button {
   flex: 1 0 50%;
 }
 
-#comments > .comment-list > .comment {
+.comment-body {
   padding-bottom: 2.5em;
 }
 
