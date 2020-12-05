@@ -25,7 +25,7 @@ main {
 
 h1 {
   font-size: 2em;
-  margin: .5em 0;
+  margin: 0 0 .5em;
 }
 
 hr {
@@ -298,7 +298,7 @@ hr {
 
 ul,
 ol {
-  margin: 0 2em 1.5em 0em;
+  margin: 0 0 1.5em 0;
 }
 
 ul {
@@ -644,9 +644,11 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 .widget {
   margin: 0 0 1.5em;
 }
-
 .widget select {
   max-width: 100%;
+}
+.wp-calendar-table {
+  text-align: left;
 }
 
 /* Media */
@@ -847,12 +849,6 @@ input[type="search"]:focus::-webkit-search-cancel-button {
   opacity: 1;
 }
 
-@media (min-width: 40em) {
-  .custom-logo {
-      padding-top: 0;
-  }
-}
-
 /* Archives */
 
 .page-title > ion-icon {
@@ -998,10 +994,6 @@ input[type="search"]:focus::-webkit-search-cancel-button {
   }
 
   .site-menu {
-    margin-bottom: 50px;
-  }
-
-  .site-menu {
     clear: both;
     float: right;
     width: 100%;
@@ -1024,6 +1016,12 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 
   .site-menu li li:focus {
     display: block;
+  }
+
+  .main-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
   }
 
   .main-nav a {
@@ -1081,10 +1079,6 @@ input[type="search"]:focus::-webkit-search-cancel-button {
   }
   .top-nav a {
     padding: 5px 20px;
-  }
-  .main-nav {
-    display: flex;
-    justify-content: center;
   }
 }
 
@@ -1303,7 +1297,8 @@ a.imprint {
 
 .site-footer h3,
 .site-footer h2 {
-  color: #fff;
+  color: #f5f5f5;
+  margin-top: 0
 }
 
 @media screen and (min-width: 400px) {

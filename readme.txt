@@ -10,7 +10,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Lightweight WordPress theme designed for museums, libraries, web journals, archives, history websites and blogs. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized ionicons font icons. Muzeum is a highly performant theme. It does not use any additional libraries or frameworks. It features clean, mobile-first html5/css templates and core WordPress functions. If you are looking for a high quality WordPress theme, you have found it.
+Lightweight WordPress theme without any libraries or frameworks, designed for museums, libraries, web journals, archives, blogs, historical websites, documentation, scientific research and others. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized ionicons font icons. Muzeum is a highly performant theme. It does not use any additional libraries or frameworks. It features clean, mobile-first html5/css templates and core WordPress functions. If you are looking for a high quality WordPress theme, you have found it.
 
 == Installation ==
 
@@ -21,7 +21,7 @@ Lightweight WordPress theme designed for museums, libraries, web journals, archi
 == Changelog ==
 
 = 1.0.1 - December 2020 =
-* Get Started Button, add compatibility for IE11
+* Add Get Started Button, add compatibility for IE11, fix backward compatibility issues, Update screenshot and docs, format code
 
 = 1.0.0 - November 2020 =
 * Initial release

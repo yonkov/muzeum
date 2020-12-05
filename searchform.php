@@ -9,7 +9,7 @@
             </label>
             <input type="search" class="form-control" placeholder="<?php _e( 'Search...', 'muzeum' ); ?>"
                 value="<?php echo esc_attr(get_search_query()); ?>" name="s" />
-                <a href="#" class="close"></ion-icon><ion-icon name="close"></ion-icon></a>
+                <a href="#" class="close"><ion-icon name="close"></ion-icon></a>
         </div>
     </form>
 </div>

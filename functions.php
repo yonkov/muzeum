@@ -184,9 +184,7 @@ function muzeum_add_type_module_attribute( $tag, $handle ) {
 	if ( $handle !== 'muzeum-ionicons-module' ) {
 		return $tag;
 	}
-	// needed in case you already have a type='javascript' attribute
-	$new_tag = str_replace( "type='text/javascript'", '', $tag );
-	// adding type='module'
+	// add type='module' script attribute
 	$new_tag = str_replace( ' src', " type='module' src", $tag );
 	return $new_tag;
 }

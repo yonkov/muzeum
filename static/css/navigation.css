@@ -144,10 +144,6 @@
   }
 
   .site-menu {
-    margin-bottom: 50px;
-  }
-
-  .site-menu {
     clear: both;
     float: left;
     width: 100%;
@@ -170,6 +166,12 @@
 
   .site-menu li li:focus {
     display: block;
+  }
+
+  .main-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
   }
 
   .main-nav a {
@@ -239,8 +241,4 @@
     bottom: auto;
   }
 
-  .main-nav {
-    display: flex;
-    justify-content: center;
-  }
 }

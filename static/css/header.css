@@ -41,9 +41,3 @@
 .sticky h2 a{
     color: #b06500;
 }
-
-@media (min-width: 40em) {
-    .custom-logo {
-        padding-top: 0;
-    }
-}
