@@ -349,6 +349,10 @@ a {
   text-decoration: underline;
 }
 
+.entry-title {
+  word-wrap: break-word;
+}
+
 .entry-title a {
   text-decoration: none;
 }

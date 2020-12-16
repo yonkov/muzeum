@@ -21,7 +21,7 @@ Lightweight WordPress theme without any libraries or frameworks, designed for mu
 == Changelog ==
 
 = 1.0.3 - December 2020 =
-* Add underlines to entry-content links, add fb open graph to single posts and update docs
+* Add underlines to entry-content links, add fb open graph to single posts, fix extra long title overflow and update docs
 
 = 1.0.2 - December 2020 =
 * Update theme screenshot, css fixes
