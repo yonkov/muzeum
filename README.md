@@ -20,23 +20,14 @@ Muzeum has a built-in breadcrumb system for posts and pages. You can choose whet
 The theme displays post meta information for each post. You can choose whether to show or remove any post meta information (date, author, category, tags and comments).
 
 ### Primary Menu
-
 Go to `appearance => menu` and create a menu, then assign it to "Primary" location. This theme supports two menu locations, "Primary" and "Top". If there is no menu assigned to the primary menu location, the primary menu will display a list with all the site's pages. The top menu bar will be hidden until you asssign it to a menu.
+
 ### Social Icons Menu
-Muzeum theme ships with a beatiful open-source font by the Ionic Team called [ionicons](https://ionicons.com/). To add social media icons (facebook, twitter, etc.) you need to add custom links to the top menu. Don't worry, it is very easy.
+Muzeum theme ships with a beatiful open-source font by the Ionic Team called [ionicons](https://ionicons.com/). In the pro vesrion of the theme, you can add social media icons (facebook, twitter, etc.) to the "Top" menu location dirctly from the theme customizer.
 
-After you create a Social Links menu from `appearance => menu => create a new menu`, click on `add menu items => custom links` and in the `Link Text` tab add the following html code:
+Navigate to `appearance => customize => social icons` and in the url tab of the social platform url, add the exact link. For example, in the case of facebook link, you can add https://facebook.com/wordpress and the facebook icon will automatically appear in the top menu (do not forget to replace this link with your profile's link)
 
-```html
-<ion-icon name="logo-facebook"></ion-icon>
-<ion-icon name="logo-twitter"></ion-icon>
-<ion-icon name="logo-youtube"></ion-icon>
-<ion-icon name="mail"></ion-icon>
-```
-
-In the url tab add the exact address of the facebook link, e.g. https://facebook.com/wordpress
-
-You can add as many social icons as you wish. For more information, check [ionicons documentation](https://ionicons.com/)
+You can add as many social icons to the top menu, as you wish. For more information, check [ionicons documentation](https://ionicons.com/)
 
 ## License
 This theme, like WordPress, is licensed under the GPL.

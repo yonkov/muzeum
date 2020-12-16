@@ -343,6 +343,12 @@ a {
   text-decoration: none;
 }
 
+.entry-content a,
+.comment-content a,
+.textwidget a {
+  text-decoration: underline;
+}
+
 .entry-title a {
   text-decoration: none;
 }

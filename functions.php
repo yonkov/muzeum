@@ -9,7 +9,7 @@
 
 if ( ! defined( 'MUZEUM_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'MUZEUM_VERSION', '1.0.2' );
+	define( 'MUZEUM_VERSION', '1.0.3' );
 }
 
 if ( ! function_exists( 'muzeum_setup' ) ) :
@@ -445,3 +445,20 @@ function muzeum_call_to_action() {
 
 	endif;
 }
+
+/** 
+ * Facebook Open Graph
+ * 
+ * Display featured posts as og:image on single page
+ * 
+ * @link https://stackoverflow.com/questions/28735174/wordpress-ogimage-featured-image
+ * @since v.1.0.3
+ */
+
+function muzeum_fb_open_graph() {	
+	if( is_single() && has_post_thumbnail() ) {
+        echo '<meta property="og:image" content="'. esc_attr(get_the_post_thumbnail_url(get_the_ID()))   .'" />';
+    }
+}
+
+add_action('wp_head', 'muzeum_fb_open_graph');

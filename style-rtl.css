@@ -349,6 +349,12 @@ a {
   text-decoration: none;
 }
 
+.entry-content a,
+.comment-content a,
+.textwidget a {
+  text-decoration: underline;
+}
+
 a:hover,
 a:focus,
 a:active {
