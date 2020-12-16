@@ -5,7 +5,10 @@ Lightweight WordPress theme designed for museums, libraries, web journals, archi
 ### Theme Cusomizer
 Use the theme customizer to customize the theme to taste. There are just enough options to make your site unique. You can change the background color, the header image, the headings text color, the primary menu colors, the top menu colors and even the sidebar links color.
 
-To use the theme's customizer, log in to your dashboard and navigate to Appearance > Customize. You can also access the customizer from the admin bar on the top of the page.
+To use the theme's customizer, log in to your dashboard and navigate to Appearance > Customize. You can also access the customizer from the admin bar on the top of the page. 
+
+### Header Options
+You can add custom header image and position it any way you want via the header options in the theme customizer. You can also edit the header call to action button on the homepage. By default, this theme ships with a beautiful museum logo. You can remove it and add your own custom logo from the Site Identity section
 
 ### Right Sidebar
 The theme supports a right sidebar and you can add as many widgets as you want there. You can add a widget from dashboard > widgets.
@@ -23,7 +26,7 @@ The theme displays post meta information for each post. You can choose whether t
 Go to `appearance => menu` and create a menu, then assign it to "Primary" location. This theme supports two menu locations, "Primary" and "Top". If there is no menu assigned to the primary menu location, the primary menu will display a list with all the site's pages. The top menu bar will be hidden until you asssign it to a menu.
 
 ### Social Icons Menu
-Muzeum theme ships with a beatiful open-source font by the Ionic Team called [ionicons](https://ionicons.com/). In the pro vesrion of the theme, you can add social media icons (facebook, twitter, etc.) to the "Top" menu location dirctly from the theme customizer.
+Muzeum theme ships with a beatiful open-source font by the Ionic Team called [ionicons](https://ionicons.com/). In the pro vesrion of the theme, you can add social media icons (facebook, twitter, etc.) to the "Top" menu location directly from the theme customizer.
 
 Navigate to `appearance => customize => social icons` and in the url tab of the social platform url, add the exact link. For example, in the case of facebook link, you can add https://facebook.com/wordpress and the facebook icon will automatically appear in the top menu (do not forget to replace this link with your profile's link)
 
