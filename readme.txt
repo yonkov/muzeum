@@ -4,13 +4,13 @@ Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu,
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 5.5
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Lightweight WordPress theme without any libraries or frameworks, designed for museums, libraries, web journals, archives, blogs, historical websites, documentation, scientific research and others. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized ionicons font icons. Muzeum is a highly performant theme. It does not use any additional libraries or frameworks. It features clean, mobile-first html5/css templates and core WordPress functions. It can also be used as a starter theme. If you are looking for a high quality WordPress theme, you have found it.
+Lightweight WordPress theme without any libraries or frameworks. Designed for museums, libraries, web journals, archives, blogs, historical websites, documentation, scientific research and others. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized ionicons font icons. Muzeum is a highly performant theme. It does not use any additional libraries or frameworks. It features clean, mobile-first html5/css templates and core WordPress functions. It can also be used as a starter theme. If you are looking for a high quality WordPress theme, you have found it.
 
 == Installation ==
 
@@ -19,6 +19,9 @@ Lightweight WordPress theme without any libraries or frameworks, designed for mu
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.0.4 - December 2020 =
+* Fix icons stroke IE11
 
 = 1.0.3 - December 2020 =
 * Add underlines to entry-content links, add fb open graph to single posts, fix extra long title overflow and update docs

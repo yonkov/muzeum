@@ -832,6 +832,17 @@ input[type="search"]:focus::-webkit-search-cancel-button {
   margin-bottom: 1.5em;
 }
 
+/* IE 11 Ionicons fix */
+
+.ionicon-stroke-width {
+  stroke-width: 32px;
+  stroke: #333;
+}
+
+.ionicon-fill-none {
+  fill: none;
+}
+
 /* Header */
 
 .site-title a {

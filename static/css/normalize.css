@@ -722,3 +722,13 @@ textarea {
   margin-right: auto;
   margin-bottom: 1.5em;
 }
+
+/* IE 11 Ionicons fix */
+
+.ionicon-stroke-width {
+  stroke-width: 32px;
+  stroke: #333;
+}
+.ionicon-fill-none {
+  fill: none;
+}
