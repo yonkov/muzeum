@@ -14,11 +14,11 @@ ion-icon {
     display: inline-block;
     padding-right: 4px;
 }
+.entry-meta .posted-on,
+.entry-footer .tags-links {
+    padding-right: 10px;
+}
 
 .entry-meta time {
     padding-left: 2px;
-}
-
-.entry-footer .tags-links {
-    padding-right: 8px;
 }

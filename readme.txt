@@ -3,8 +3,8 @@ Contributors: nravota12
 Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, two-columns, translation-ready
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 5.5
-Stable tag: 1.0.4
+Tested up to: 5.6
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,9 @@ Lightweight WordPress theme without any libraries or frameworks. Designed for mu
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.0.5 - December 2020 =
+* Improve font size
 
 = 1.0.4 - December 2020 =
 * Fix icons stroke IE11
