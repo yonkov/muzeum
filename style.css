@@ -4,7 +4,7 @@ Theme URI: https://nasiothemes.com/themes/muzeum
 Author: Atanas Yonkov
 Author URI: https://nasiothemes.com
 Description: Lightweight WordPress theme without any libraries or frameworks. Designed for museums, libraries, web journals, archives, blogs, historical websites, documentation, scientific research and others. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized ionicons font icons. Muzeum is a highly performant theme. It features clean, mobile-first html5/css templates and core WordPress functions. It can also be used as a starter theme and to adapt it to any design. If you are looking for a high quality WordPress theme, you have found it.
-Version: 1.0.6
+Version: 1.0.7
 Requires at least: 4.7
 Tested up to: 5.6
 Requires PHP: 5.6
@@ -330,8 +330,8 @@ ol {
   list-style: decimal;
 }
 
-li > ul,
-li > ol {
+li>ul,
+li>ol {
   margin-bottom: 0;
   margin-left: 1.5em;
   padding-left: 0.5em;
@@ -542,6 +542,7 @@ textarea {
 .comment-list ol {
   list-style: none;
 }
+
 .comment-list {
   margin-left: 0;
   padding-left: 0;
@@ -757,6 +758,7 @@ textarea {
   stroke-width: 32px;
   stroke: #333;
 }
+
 .ionicon-fill-none {
   fill: none;
 }
@@ -771,17 +773,21 @@ textarea {
   font-size: 2.5rem;
   font-style: italic;
 }
+
 .site-description {
   margin-bottom: 0;
   padding-bottom: 1.5em;
   font-style: italic;
 }
+
 .site-branding {
   text-align: center;
 }
+
 .custom-logo {
   padding-top: 2em;
 }
+
 .call-to-action {
   margin-bottom: 1.5em;
   background-color: transparent;
@@ -801,7 +807,7 @@ textarea {
 
 /* Archives */
 
-.page-title > ion-icon {
+.page-title>ion-icon {
   padding-right: 10px;
 }
 
@@ -828,6 +834,10 @@ textarea {
   position: relative;
 }
 
+.top-nav li {
+  font-size: 1rem
+}
+
 .menu-toggle {
   background-color: transparent;
 }
@@ -839,7 +849,7 @@ textarea {
   opacity: 0.9;
 }
 
-.site-menu .menu > li > a:hover {
+.site-menu .menu>li>a:hover {
   transition: 0.4s all;
 }
 
@@ -904,16 +914,19 @@ textarea {
   cursor: pointer;
   width: 20px;
 }
+
 .burger::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
+
 .burger:before {
   content: "";
   display: block;
   width: 100%;
   margin-bottom: 5px;
 }
+
 .burger:after {
   content: "";
   display: block;
@@ -925,19 +938,22 @@ textarea {
   display: none;
 }
 
-.burger-check:checked ~ .burger {
+.burger-check:checked~.burger {
   border-bottom: 4px solid transparent;
 }
-.burger-check:checked ~ .burger:before {
+
+.burger-check:checked~.burger:before {
   transform: rotate(-45deg) translateY(3px) translateX(-5px);
   -webkit-transform: rotate(-45deg) translateY(3px) translateX(-5px);
 }
-.burger-check:checked ~ .burger:after {
+
+.burger-check:checked~.burger:after {
   transform: rotate(45deg) translateY(0px) translateX(-2px);
   -webkit-transform: rotate(45deg) translateY(0px) translateX(-2px);
 }
 
 @media (min-width: 40em) {
+
   /* Hide menu toggle button */
   .menu-toggle {
     display: none;
@@ -1003,26 +1019,27 @@ textarea {
     border-right: 1px solid rgba(255, 255, 255, 0.25);
   }
 
-  .site-menu ul li:hover > ul,
-  .site-menu ul li.focus > ul {
+  .site-menu ul li:hover>ul,
+  .site-menu ul li.focus>ul {
     left: auto;
   }
 
-  .site-menu ul ul li:hover > ul,
-  .site-menu ul ul li.focus > ul {
+  .site-menu ul ul li:hover>ul,
+  .site-menu ul ul li.focus>ul {
     left: 100%;
   }
 
-  .site-menu li.page_item_has_children > a:after,
-  .site-menu li.menu-item-has-children > a:after {
+  .site-menu li.page_item_has_children>a:after,
+  .site-menu li.menu-item-has-children>a:after {
     content: "\25bc";
     font-size: 7px;
     vertical-align: 1px;
     padding-left: 5px;
     opacity: 0.75;
   }
-  .site-menu li li.page_item_has_children > a:after,
-  .site-menu li li.menu-item-has-children > a:after {
+
+  .site-menu li li.page_item_has_children>a:after,
+  .site-menu li li.menu-item-has-children>a:after {
     content: "\25b6";
     font-size: 7px;
     vertical-align: 1px;
@@ -1033,6 +1050,7 @@ textarea {
   .top-nav {
     min-height: 35px;
   }
+
   .top-nav a {
     padding: 5px 20px;
     margin: 0;
@@ -1093,14 +1111,17 @@ textarea {
     position: relative;
     top: 1px;
   }
+
   .top-search-form .close {
     top: 1px;
   }
+
   .open .top-search-form {
     width: auto;
     top: 0;
     bottom: auto;
   }
+
   .top-nav .search-form .form-group input {
     height: 35px;
   }
@@ -1211,7 +1232,7 @@ textarea {
   text-transform: uppercase;
 }
 
-.widget > ul {
+.widget>ul {
   margin-left: 0;
 }
 
@@ -1298,6 +1319,7 @@ ion-icon {
   display: inline-block;
   padding-right: 4px;
 }
+
 .entry-meta .posted-on,
 .entry-footer .tags-links {
   padding-right: 10px;
@@ -1306,6 +1328,7 @@ ion-icon {
 .entry-meta time {
   padding-left: 2px;
 }
+
 @media (min-width: 60em) {
   .entry-meta .edit-link {
     float: right;
@@ -1352,7 +1375,7 @@ a.imprint {
   color: #fff;
 }
 
-.site-footer .footer-social li a > span {
+.site-footer .footer-social li a>span {
   width: 30px;
 }
 
@@ -1382,7 +1405,7 @@ a.imprint {
   font-size: 14px;
 }
 
-.site-footer ul > li a {
+.site-footer ul>li a {
   font-size: 0.8em;
 }
 
@@ -1409,6 +1432,7 @@ a.imprint {
   .site-footer .widget-column {
     padding: 0 15px 0;
   }
+
   .site-footer .widget-column section {
     padding-top: 3em;
   }
