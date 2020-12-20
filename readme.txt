@@ -20,6 +20,9 @@ Lightweight WordPress theme without any libraries or frameworks. Designed for mu
 
 == Changelog ==
 
+= 1.0.8 - December 2020 =
+* Update theme screenshot
+
 = 1.0.7 - December 2020 =
 * Fix top menu font size
 
@@ -51,5 +54,6 @@ Lightweight WordPress theme without any libraries or frameworks. Designed for mu
 * The theme uses code sinppets from [Scaffold theme](https://wordpress.org/themes/scaffold/) (hex to rgb converter), [Highstarter theme](https://wordpress.org/themes/highstarter/) (footer widgets) and [GrandMart theme](https://wordpress.org/themes/grandmart/) (preconnect google fonts). All licensed under [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
 == Resources ==
-* ionicons, https://ionicons.com/, (C) 2013-2020 Ben Sperry, [MIT](https://opensource.org/licenses/MIT)
-* The header image, the background image and the theme logo are created and GPL released by the theme's author, [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+* Ionicons, https://ionicons.com/, (C) 2013-2020 Ben Sperry, [MIT](https://opensource.org/licenses/MIT)
+* The header image, the background image, the theme logo and screenshot are created and GPL released by the theme's author, [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+* Vynil record featured post image in the theme screenshot, (C) Studio 7042 from StockSnap, [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
