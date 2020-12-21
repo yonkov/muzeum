@@ -3,8 +3,8 @@ Theme Name: Muzeum
 Theme URI: https://nasiothemes.com/themes/muzeum
 Author: Atanas Yonkov
 Author URI: https://nasiothemes.com
-Description: Lightweight WordPress theme without any libraries or frameworks. Designed for museums, libraries, web journals, archives, blogs, historical websites, documentation, scientific research and others. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized ionicons font icons. Muzeum is a highly performant theme. It features clean, mobile-first html5/css templates and core WordPress functions. It can also be used as a starter theme and to adapt it to any design. If you are looking for a high quality WordPress theme, you have found it.
-Version: 1.0.8
+Description: Lightweight WordPress theme without any libraries or frameworks. Designed for museums, libraries, web journals, archives, blogs, historical websites, documentation, scientific research and others. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized Ionicons font icons. Muzeum is a highly performant theme. It features clean, mobile-first html5/css templates and core WordPress functions. It can also be used as a starter theme and is easy to adapt to any design. If you are looking for a high quality WordPress theme, you have found it.
+Version: 1.0.9
 Requires at least: 4.7
 Tested up to: 5.6
 Requires PHP: 5.6
@@ -356,6 +356,10 @@ img {
   max-width: 100%;
 }
 
+.post-thumbnail img {
+  padding-top: 1.3em;
+}
+
 figure {
   margin: 1em 0;
 }
@@ -575,19 +579,6 @@ textarea {
 
 .bypostauthor {
   display: block;
-}
-
-/* Widgets */
-.widget {
-  margin: 0 0 1.5em;
-}
-
-.widget select {
-  max-width: 100%;
-}
-
-.wp-calendar-table {
-  text-align: left;
 }
 
 /* Media */
@@ -1161,6 +1152,15 @@ textarea {
 ==== SIDEBAR ==== 
 ================*/
 
+.widget {
+  margin: 0 0 2.75em;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.widget select {
+  max-width: 100%;
+}
+
 .widget-area {
   position: relative;
 }
@@ -1173,6 +1173,9 @@ textarea {
   #secondary {
     width: 100%;
     max-width: 25%;
+  }
+  .widget-area h2 {
+    margin-top: 0;
   }
 }
 
@@ -1211,11 +1214,6 @@ textarea {
   border: 0;
 }
 
-.widget {
-  margin: 0 0 2.5em;
-  border-bottom: 1px solid #e3e3e3;
-}
-
 .widget h2 {
   font-size: 1rem;
   line-height: 22px;
@@ -1236,10 +1234,6 @@ textarea {
   margin-left: 0;
 }
 
-.widget select {
-  max-width: 100%;
-}
-
 @media (min-width: 40em) and (max-width: 60em) {
   .widget input {
     max-width: 60%;
@@ -1254,6 +1248,10 @@ textarea {
   .widget #searchform {
     width: 100%;
   }
+}
+
+.wp-calendar-table {
+  text-align: left;
 }
 
 .widget #searchform input[type="search"] {

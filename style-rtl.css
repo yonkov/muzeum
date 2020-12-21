@@ -334,6 +334,10 @@ img {
   max-width: 100%;
 }
 
+.post-thumbnail img {
+  padding-top: 1.3em;
+}
+
 figure {
   margin: 1em 0;
 }
@@ -1204,6 +1208,9 @@ ion-icon {
     width: 100%;
     max-width: 25%;
   }
+  .widget-area h2 {
+    margin-top: 0;
+  }
 }
 
 .widget-area ul {
@@ -1241,7 +1248,7 @@ ion-icon {
 }
 
 .widget {
-  margin: 0 0 2.5em;
+  margin: 0 0 2.75em;
   border-bottom: 1px solid #e3e3e3;
 }
 
