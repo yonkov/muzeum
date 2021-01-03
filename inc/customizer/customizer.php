@@ -45,7 +45,7 @@ function muzeum_colors_section_customize( $wp_customize ) {
 			$wp_customize,
 			'header_btn_bgr_color',
 			array(
-				'label'   => esc_html__( 'Header Button Color', 'muzeum' ),
+				'label'   => esc_html__( 'Header Button Background Color', 'muzeum' ),
 				'section' => 'colors',
 			)
 		)
