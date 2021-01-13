@@ -4,7 +4,7 @@ Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu,
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 5.6
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,9 @@ Lightweight WordPress theme without any libraries or frameworks. Designed for mu
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.1.1 - January 2021 =
+* Update font sizes. Larger font size for entry-content. Update description.
 
 = 1.1.0 - January 2021 =
 * Update site Description and customizer text

@@ -215,7 +215,7 @@ textarea {
   color: #333333;
   font-family: "Alegreya", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -519,7 +519,6 @@ textarea {
   position: absolute;
   top: 0px;
   left: 0;
-  font-size: 16px;
 }
 
 input[type="search"]::-webkit-search-cancel-button {
@@ -650,6 +649,14 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 0;
+}
+
+.entry-content {
+  font-size: 18px;
+}
+
+.more-link {
+  font-size: 1rem;
 }
 
 .page-links {
@@ -865,6 +872,8 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 .site-description {
   margin-bottom: 0;
   padding-bottom: 1.5em;
+  font-size: 18px;
+  font-style: italic;
 }
 
 .site-branding {

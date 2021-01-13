@@ -3,8 +3,8 @@ Theme Name: Muzeum
 Theme URI: https://nasiothemes.com/themes/muzeum
 Author: Atanas Yonkov
 Author URI: https://nasiothemes.com
-Description: Lightweight WordPress theme without any libraries or frameworks. Designed for museums, libraries, web journals, archives, blogs, historical websites, documentation, scientific research and others. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized Ionicons font icons that only load the icons that you use. Muzeum is a highly performant theme. It is very fast, SEO-optimized and cross-browser compatible. It features clean, mobile-first html5/css templates and core WordPress functions. It can also be used as a starter theme and is easy to adapt to any design. If you are looking for a high quality WordPress theme, you have found it.
-Version: 1.1.0
+Description: Lightweight WordPress theme without any libraries or frameworks. Designed for museums, libraries, web journals, archives, blogs, historical websites, documentation, scientific research and others. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized Ionicons font icons that only load the icons that you use. Muzeum is a highly performant theme. It is very fast, SEO-optimized and cross-browser compatible. It features clean, mobile-first html5/css3 templates, vanilla JavaScript and core WordPress functions. It can also be used as a starter theme and is easy to adapt to any design. If you are looking for a high quality WordPress theme, you have found it.
+Version: 1.1.1
 Requires at least: 4.7
 Tested up to: 5.6
 Requires PHP: 5.6
@@ -236,7 +236,7 @@ textarea {
   color: #333333;
   font-family: "Alegreya", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.5;
 }
 
@@ -567,6 +567,14 @@ textarea {
   margin: 1.5em 0 0;
 }
 
+.entry-content {
+  font-size: 18px;
+}
+
+.more-link {
+  font-size: 1rem;
+}
+
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
@@ -768,6 +776,7 @@ textarea {
 .site-description {
   margin-bottom: 0;
   padding-bottom: 1.5em;
+  font-size: 18px;
   font-style: italic;
 }
 
@@ -1215,7 +1224,7 @@ textarea {
 }
 
 .widget h2 {
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 22px;
 }
 
