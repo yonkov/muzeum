@@ -4,7 +4,7 @@ Theme URI: https://nasiothemes.com/themes/muzeum
 Author: Atanas Yonkov
 Author URI: https://nasiothemes.com
 Description: Lightweight WordPress theme without any libraries or frameworks. Designed for museums, libraries, web journals, archives, blogs, historical websites, documentation, scientific research and others. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized Ionicons font icons that only load the icons that you use. Muzeum is a highly performant theme. It is very fast, SEO-optimized and cross-browser compatible. It features clean, mobile-first html5/css3 templates, vanilla JavaScript and core WordPress functions. It can also be used as a starter theme and is easy to adapt to any design. If you are looking for a high quality WordPress theme, you have found it.
-Version: 1.1.1
+Version: 1.1.2
 Requires at least: 4.7
 Tested up to: 5.6
 Requires PHP: 5.6
@@ -386,7 +386,7 @@ a {
 }
 
 .entry-title a {
-  text-decoration: none;
+  font-size: 1.75rem;
 }
 
 a:hover,
@@ -539,7 +539,15 @@ textarea {
 }
 
 .comment-body {
-  padding-bottom: 2.5em;
+  box-shadow: 2px 3px 11px 2px rgba(0,0,0,0.1);
+  padding: 1.5em;
+  margin: 2em 0;
+  border-radius: 3px;
+}
+
+.comment-body .avatar {
+  margin-right: 7px;
+  border-radius: 3px;
 }
 
 .comment-list,
@@ -567,12 +575,8 @@ textarea {
   margin: 1.5em 0 0;
 }
 
-.entry-content {
+.entry-content, .nav-previous, .nav-next {
   font-size: 18px;
-}
-
-.more-link {
-  font-size: 1rem;
 }
 
 .page-links {
@@ -943,13 +947,18 @@ textarea {
 }
 
 .burger-check:checked~.burger:before {
-  transform: rotate(-45deg) translateY(3px) translateX(-5px);
-  -webkit-transform: rotate(-45deg) translateY(3px) translateX(-5px);
+  transform: rotate(-45deg) translateY(5px) translateX(-6px);
+  -webkit-transform: rotate(-45deg) translateY(5px) translateX(-6px);
 }
 
 .burger-check:checked~.burger:after {
-  transform: rotate(45deg) translateY(0px) translateX(-2px);
-  -webkit-transform: rotate(45deg) translateY(0px) translateX(-2px);
+  transform: rotate(45deg) translateY(1px) translateX(0px);
+  -webkit-transform: rotate(45deg) translateY(1px) translateX(0px);
+}
+
+.top-nav .burger-check:checked ~ .burger::after {
+  transform: rotate(45deg) translateY(1px) translateX(0px);
+  -webkit-transform: rotate(45deg) translateY(1px) translateX(1px);
 }
 
 @media (min-width: 40em) {

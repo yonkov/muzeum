@@ -597,6 +597,7 @@ function muzeum_customizer_css() {
 		.main-nav .burger::before,
 		.main-nav .burger::after {
 			border-bottom: 2px solid <?php echo esc_attr( $primary_menu_text_color ); ?>;
+			transition: .12s all;
 		}
 
 		.main-nav a {
@@ -656,6 +657,7 @@ function muzeum_customizer_css() {
 		.top-nav .burger::before,
 		.top-nav .burger::after {
 			border-bottom: 2px solid <?php echo esc_attr( $top_menu_text_color ); ?>;
+			transition: .12s all;
 		}
 
 		.top-nav a {

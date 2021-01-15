@@ -4,13 +4,13 @@ Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu,
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 5.6
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Lightweight WordPress theme without any libraries or frameworks. Designed for museums, libraries, web journals, archives, blogs, historical websites, documentation, scientific research and others. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized Ionicons font icons that only load the icons that you use. Muzeum is a highly performant theme. It is very fast, SEO-optimized and cross-browser compatible. It features clean, mobile-first html5/css templates and core WordPress functions. It can also be used as a starter theme and is easy to adapt to any design. If you are looking for a high quality WordPress theme, you have found it.
+Lightweight WordPress theme without any libraries or frameworks. Designed for museums, libraries, web journals, archives, blogs, historical websites, documentation, scientific research and others. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized Ionicons font icons that only load the icons that you use. Muzeum is a highly performant theme. It is very fast, SEO-optimized and cross-browser compatible. It features clean, mobile-first html5/css3 templates, vanilla JavaScript and core WordPress functions. It can also be used as a starter theme and is easy to adapt to any design. If you are looking for a high quality WordPress theme, you have found it.
 
 == Installation ==
 
@@ -19,6 +19,9 @@ Lightweight WordPress theme without any libraries or frameworks. Designed for mu
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.1.2 - January 2021 =
+* Improve comments section, add toggle menu animation
 
 = 1.1.1 - January 2021 =
 * Update font sizes. Larger font size for entry-content. Update description.
