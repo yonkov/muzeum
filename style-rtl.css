@@ -366,6 +366,10 @@ a {
   text-decoration: underline;
 }
 
+.link-more {
+  font-size: 1rem;
+}
+
 a:hover,
 a:focus,
 a:active {
@@ -1233,6 +1237,15 @@ ion-icon {
   .widget-area h2 {
     margin-top: 0;
   }
+  .no-sidebar .site-main {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.no-sidebar .wrapper {
+  max-width: 960px;
 }
 
 .widget-area ul {

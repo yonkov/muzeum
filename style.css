@@ -3,15 +3,15 @@ Theme Name: Muzeum
 Theme URI: https://nasiothemes.com/themes/muzeum
 Author: Atanas Yonkov
 Author URI: https://nasiothemes.com
-Description: Lightweight WordPress theme without any libraries or frameworks. Designed for museums, libraries, web journals, archives, blogs, historical websites, documentation, scientific research and others. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized Ionicons font icons that only load the icons that you use. Muzeum is a highly performant theme. It is very fast, SEO-optimized and cross-browser compatible. It features clean, mobile-first html5/css3 templates, vanilla JavaScript and core WordPress functions. It can also be used as a starter theme and is easy to adapt to any design. If you are looking for a high quality WordPress theme, you have found it.
-Version: 1.1.2
+Description: Lightweight WordPress theme without any libraries or frameworks. Designed for museums, libraries, web journals, archives, blogs, historical websites, anthologies, documentation, scientific research and others. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized Ionicons font icons that only load the icons that you use. Muzeum is a highly performant theme. It is very fast, SEO-optimized and cross-browser compatible. It features clean, mobile-first html5/css3 templates, vanilla JavaScript and core WordPress functions. It can also be used as a starter theme and is easy to adapt to any design. If you are looking for a high quality WordPress theme, you have found it.
+Version: 1.1.3
 Requires at least: 4.7
 Tested up to: 5.6
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: muzeum
-Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, two-columns, translation-ready
+Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, one-column, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, two-columns, translation-ready
 Text Domain: muzeum
 
 This theme, like WordPress, is licensed under the GPL.
@@ -379,6 +379,10 @@ a {
 .comment-content a,
 .textwidget a {
   text-decoration: underline;
+}
+
+.link-more {
+  font-size: 1rem;
 }
 
 .entry-title {
@@ -1187,6 +1191,10 @@ textarea {
   padding: 20px 0;
 }
 
+.no-sidebar .wrapper {
+  max-width: 960px;
+}
+
 @media (min-width: 40em) {
   #secondary {
     width: 100%;
@@ -1194,6 +1202,11 @@ textarea {
   }
   .widget-area h2 {
     margin-top: 0;
+  }
+  .no-sidebar .site-main {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 

@@ -9,7 +9,7 @@
 
 if ( ! defined( 'MUZEUM_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'MUZEUM_VERSION', '1.1.2' );
+	define( 'MUZEUM_VERSION', '1.1.3' );
 }
 
 if ( ! function_exists( 'muzeum_setup' ) ) :
@@ -242,6 +242,23 @@ function muzeum_the_logo() {
 
 	endif;
 }
+
+/**
+ * Adds custom classes to the array of body classes.
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function muzeum_body_classes( $classes ) {
+
+	// Adds a class of no-sidebar when there is no sidebar present.
+	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+		$classes[] = 'no-sidebar';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'muzeum_body_classes' );
 
 /* Post Pagination on Archives */
 function muzeum_the_posts_navigation() {

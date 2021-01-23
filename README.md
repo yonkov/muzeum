@@ -11,7 +11,7 @@ To use the theme's customizer, log in to your dashboard and navigate to Appearan
 You can add custom header image and position it any way you want via the header options in the theme customizer. You can also edit the header call to action button on the homepage. By default, this theme ships with a beautiful museum logo. You can remove it and add your own custom logo from the Site Identity section
 
 ### Right Sidebar
-The theme supports a right sidebar and you can add as many widgets as you want there. You can add a widget from dashboard > widgets.
+The theme supports a right sidebar or full-width layout (no sidebar) and you can add as many widgets as you want in the right sidebar, e.g search box, recent posts or tag cloud. You can add a widget from dashboard > appearance > widgets.
 
 ### Footer Widgets
 In addition to the right sidebar, you can add widgets to two defined regions in the footer. They are named "Footer 1" and "Footer 2". These will be arranged in a beautiful multi-column layout. The theme works best if you add just one widget in Footer 1 and two widgets in Footer 2. In this way, you should have 3 widgets in the footer in total. You can add a footer widget from dashboard > widgets.
