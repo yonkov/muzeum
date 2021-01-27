@@ -62,6 +62,7 @@ if ( ! function_exists( 'muzeum_header_style' ) ) :
 				background-position: <?php echo esc_attr( $background_position ); ?>;
 				<?php if ( !$has_background_size ) : ?> background-size: cover; <?php endif; ?>
 				<?php if ( !$has_background_repeat ) : ?> background-repeat: no-repeat; <?php endif; ?>
+				min-height: 120px;
 			}
 			<?php
 		endif;

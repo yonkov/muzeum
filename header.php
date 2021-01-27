@@ -47,9 +47,7 @@
 		<?php endif; ?>
 		
 		<div class="site-branding">
-			<a href="<?php echo esc_attr(home_url()); ?>">
-				<?php muzeum_the_logo(); ?>
-			</a>
+			<?php muzeum_the_logo(); ?>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				
 			<?php $muzeum_description = get_bloginfo( 'description', 'display' );

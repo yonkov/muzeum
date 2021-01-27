@@ -9,7 +9,7 @@
 
 if ( ! defined( 'MUZEUM_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'MUZEUM_VERSION', '1.1.3' );
+	define( 'MUZEUM_VERSION', '1.1.4' );
 }
 
 if ( ! function_exists( 'muzeum_setup' ) ) :
@@ -224,14 +224,16 @@ function muzeum_the_logo() {
 	if ( ! function_exists( 'the_custom_logo' ) ) {
 		return;
 	}
-
+	
 	// Display the default theme logo if no logo is specified
 	if ( ! has_custom_logo() ) :
 		// if user did not remove the default theme logo
 		if ( $show_default_logo ) : ?>
+		<a href="<?php echo esc_attr(home_url()); ?>">
 			<img class="default-logo custom-logo"
 			src="<?php echo esc_url( get_template_directory_uri() ); ?>/static/img/museum-logo.png"
 			alt="<?php echo esc_attr( 'muzeum theme logo' ); ?>" />
+		</a>
 			<?php
 		endif;
 
@@ -442,7 +444,7 @@ function muzeum_breadcrumbs() {
  * @since v.1.0.1
  */
 function muzeum_call_to_action() {
-	if ( is_front_page() || is_home() ) :
+	if ( is_front_page() ) :
 
 		$banner_label = get_theme_mod( 'banner_label', __( 'Get Started', 'muzeum' ) );
 		$banner_link  = get_theme_mod( 'banner_link', '#' );

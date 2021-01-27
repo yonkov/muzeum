@@ -874,6 +874,15 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 
 /* Header */
 
+.site-title {
+  margin-bottom: 0;
+  padding: .5em;
+}
+
+.site-branding > a ~ .site-title {
+	padding-top: 0;
+}
+
 .site-title a {
   text-decoration: none;
   font-family: "Alegreya";
@@ -882,7 +891,7 @@ input[type="search"]:focus::-webkit-search-cancel-button {
 }
 
 .site-description {
-  margin-bottom: 0;
+  margin: 0;
   padding-bottom: 1.5em;
   font-size: 18px;
   font-style: italic;
