@@ -46,15 +46,17 @@
 		
 		<?php endif; ?>
 		
-		<div class="site-branding">
-			<?php muzeum_the_logo(); ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				
-			<?php $muzeum_description = get_bloginfo( 'description', 'display' );
-			if ( $muzeum_description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $muzeum_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif;
-			muzeum_call_to_action(); ?>
+		<div class="site-branding  <?php echo esc_attr(!display_header_text() ? 'no-title': '');?>">
+			<div class="hero-wrapper">
+				<?php muzeum_the_logo(); ?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					
+				<?php $muzeum_description = get_bloginfo( 'description', 'display' );
+				if ( $muzeum_description || is_customize_preview() ) : ?>
+					<p class="site-description"><?php echo $muzeum_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				<?php endif;
+				muzeum_call_to_action(); ?>
+			</div>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="site-menu main-nav">

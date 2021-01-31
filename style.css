@@ -4,7 +4,7 @@ Theme URI: https://nasiothemes.com/themes/muzeum
 Author: Atanas Yonkov
 Author URI: https://nasiothemes.com
 Description: Lightweight WordPress theme without any libraries or frameworks. Designed for museums, libraries, web journals, archives, blogs, historical websites, anthologies, documentation, scientific research and others. This theme is made with the divine purpose to showcase high quality content. It is fully customizable and highly extendable. It features a vintage old paper background, option to change images, logo and theme accent colors. The theme features beautiful typography and the highly optimized Ionicons font icons that only load the icons that you use. Muzeum is a highly performant theme. It is very fast, SEO-optimized and cross-browser compatible. It features clean, mobile-first html5/css3 templates, vanilla JavaScript and core WordPress functions. It can also be used as a starter theme and is easy to adapt to any design. If you are looking for a high quality WordPress theme, you have found it.
-Version: 1.1.4
+Version: 1.1.5
 Requires at least: 4.7
 Tested up to: 5.6
 Requires PHP: 5.6
@@ -781,8 +781,16 @@ textarea {
   padding: .5em;
 }
 
-.site-branding > a ~ .site-title {
+.hero-wrapper > a ~ .site-title {
 	padding-top: 0;
+}
+
+.hero-wrapper > a {
+  display: block;
+}
+
+.hero-wrapper {
+  z-index: 1;
 }
 
 .site-title a {
@@ -801,10 +809,21 @@ textarea {
 
 .site-branding {
   text-align: center;
+  position: relative;
+}
+
+.site-branding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .custom-logo {
   padding-top: 2em;
+}
+
+.no-title .custom-logo {
+  padding-bottom: 2em;
 }
 
 .call-to-action {
@@ -989,8 +1008,6 @@ textarea {
   }
 
   .site-menu {
-    clear: both;
-    float: left;
     width: 100%;
   }
 

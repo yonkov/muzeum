@@ -53,6 +53,7 @@ if ( ! function_exists( 'muzeum_header_style' ) ) :
 		$background_position = get_theme_mod( 'header-background-position', 'top' );
 		$has_background_size     = get_theme_mod( 'header-background-size', 1 );
 		$has_background_repeat   = get_theme_mod( 'header-background-repeat', 1 );
+		$overlay  = get_theme_mod('cover_template_overlay_opacity', '0');
 
 		?>
 		<style type="text/css">
@@ -62,10 +63,18 @@ if ( ! function_exists( 'muzeum_header_style' ) ) :
 				background-position: <?php echo esc_attr( $background_position ); ?>;
 				<?php if ( !$has_background_size ) : ?> background-size: cover; <?php endif; ?>
 				<?php if ( !$has_background_repeat ) : ?> background-repeat: no-repeat; <?php endif; ?>
-				min-height: 120px;
+				min-height: 220px;
 			}
-			<?php
-		endif;
+		<?php endif;
+		if ($overlay || is_customize_preview() ) : ?>
+			.site-branding::before {
+				position: absolute;
+				content: '';
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, .<?php echo esc_attr($overlay); ?>);
+			}
+		<?php endif;
 		// Has the text been hidden?
 		if ( ! display_header_text() ) :
 			?>

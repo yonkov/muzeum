@@ -1,0 +1,15 @@
+/* Customizer Live Preview */
+
+.no-logo,
+.custom-logo-link ~ a {
+  display: none;
+}
+
+.hero-wrapper > .custom-logo-link[style*="display: none"] ~ a {
+  display: inline;
+}
+
+.banner-no-label,
+.banner-no-link {
+  display: none;
+}

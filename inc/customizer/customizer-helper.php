@@ -47,6 +47,7 @@ function muzeum_customize_partial_blogdescription() {
  */
 function muzeum_customize_preview_js() {
 	wp_enqueue_script( 'muzeum-customizer', get_template_directory_uri() . '/static/js/customizer.js', array( 'customize-preview' ), MUZEUM_VERSION, true );
+	wp_enqueue_style( 'muzeum-customize-css', get_template_directory_uri() . '/static/css/customizer.css', array('customize-preview' ), MUZEUM_VERSION );
 }
 add_action( 'customize_preview_init', 'muzeum_customize_preview_js' );
 
