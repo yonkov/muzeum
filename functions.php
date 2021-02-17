@@ -9,7 +9,7 @@
 
 if ( ! defined( 'MUZEUM_VERSION' ) ) {
     // Replace the version number of the theme on each release.
-    define( 'MUZEUM_VERSION', '1.1.5' );
+    define( 'MUZEUM_VERSION', '1.1.6' );
 }
 
 if ( ! function_exists( 'muzeum_setup' ) ) :
