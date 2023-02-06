@@ -3,8 +3,8 @@ Contributors: nravota12
 Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, one-column, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, two-columns, translation-ready
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 5.6
-Stable tag: 1.1.6
+Tested up to: 6.1
+Stable tag: 1.1.8
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,12 @@ Lightweight WordPress theme without any libraries or frameworks. Designed for mu
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.1.8 - February 2023 =
+* Fix mobile menu spacings and remove text decoration from read more button
+
+= 1.1.7 - March 2021 =
+* Fix mobile menu bug when clicking on parent menu items
 
 = 1.1.6 - January 2021 =
 * Fix bug on top nav menu when there are too many menu items.

@@ -77,6 +77,7 @@
 	 * Sets or removes .focus class on an element.
 	 */
 	function toggleFocus(e) {
+		if (window.matchMedia('(max-width: 600px)').matches) return;
 		if ( e.type === 'focus' || e.type === 'blur' ) {
 			var self = this;
 			// Move up through the ancestors of the current link until we hit .nav-menu.
