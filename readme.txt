@@ -3,8 +3,8 @@ Contributors: nravota12
 Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, one-column, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, two-columns, translation-ready
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 6.2
-Stable tag: 1.1.9
+Tested up to: 6.4
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,9 @@ Lightweight WordPress theme without any libraries or frameworks. Designed for mu
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.2.0 - January 2024 =
+* Set max-width on primary menu and remove sub menu box shadows
 
 = 1.1.9 - May 2023 =
 * Add overflow-wrap in content entry
