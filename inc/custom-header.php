@@ -17,8 +17,7 @@ register_default_headers(
 	array(
 		'default-image' => array(
 			'url'           => get_template_directory_uri() . '/static/img/transparent-header.png',
-			'thumbnail_url' => get_template_directory_uri() . '/static/img/transparent-header.png',
-			'description'   => __( 'Default Header Image', 'muzeum' ),
+			'thumbnail_url' => get_template_directory_uri() . '/static/img/transparent-header.png'
 		),
 	)
 );
