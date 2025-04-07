@@ -3,7 +3,7 @@ Contributors: nravota12
 Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, one-column, right-sidebar, rtl-language-support, sticky-post, theme-options, threaded-comments, two-columns, translation-ready
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 6.4
+Tested up to: 6.7
 Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,9 @@ Lightweight WordPress theme without any libraries or frameworks. Designed for mu
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.2.2 - April 2025 =
+* Update theme screenshot
 
 = 1.2.1 - March 2025 =
 * Fix textdomain warning introduced in WordPress 6.7
